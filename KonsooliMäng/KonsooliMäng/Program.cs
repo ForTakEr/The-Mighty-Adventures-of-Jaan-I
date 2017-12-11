@@ -112,22 +112,85 @@ namespace KonsooliMäng
                 Console.WriteLine("--------------------------------------------------------------------------------------------------");
                 Console.WriteLine("\nYou embark on your journey, you start walking towards your path. \nTime passes \n\nYour mind wanders if this was the right choice, your heart stays true \nbut your mind questions. \n“Thou ought thunk he chosen the rightest of paths, ought to be'ist thar complicatest“ \nYou begin to see green leaves and green trees, night starts to overwhelm the sky. \nYou feel tired. You are thinking of making a camp");
                 Console.WriteLine("\nAre You going to find a campsite or going to get firewood. \n1.Get wood, then find camp \n2.Find campsite, then firewood");
-                string valik = Console.ReadLine();
-                if (valik == "1")
+                while (true)
                 {
-                    Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest, and find some food. you found yourself some firewood. \nYou start to look for a campsite, you found it. It isn’t perfect, but it will do.");
+                    while (true)
+                    {
+                        string valik = Console.ReadLine();
+                        if (valik == "1")
+                        {
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest, to find some wood. \nYou found yourself some firewood. \nYou start to look for a campsite, you found it. It isn’t perfect, but it will do.");
+                            break;
+                        }
+                        else if (valik == "2")
+                        {
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest for a campsite. \nYou found a nice place near a river. \nYou put your belongings on the ground and go to find firewood. \n\nYou found some firewood, but not much.");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Choose the right number");
 
-                }
-                else if (valik == "2")
-                {
-                    Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest for a campsite. \nYou found a nice place near a river. \nYou put your belongings on the ground and go to find firewood. \n\nYou found some firewood, but not much.");
-                }
+                        }
+                    }
 
-                Console.WriteLine("\nYou're sitting by the fire, you hear cracking sounds in the bushes. what do you do? \n1. Investigate \n2. Ignore");
-                string valik2 = Console.ReadLine();
-                if (valik2 == "1")
-                {
-                    Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight. You walk to the bushes, open them and punch whatever is inside. \nBut there was nothing inside there. \nYou think of yourself as such a fool, walk back and hear it again. This time you ignore it. \nThen you hear a klonk, your head hurts. \nYou fall to the ground. \nEverything fades...");
+                    while (true)
+
+                    {
+                        Console.WriteLine("\nYou're sitting by the fire, you hear cracking sounds in the bushes. what do you do? \n1. Investigate \n2. Ignore");
+                        string valik2 = Console.ReadLine();
+                        if (valik2 == "1")
+                        {
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight. You walk to the bushes, open them and punch whatever is inside. \nThere was nothing there. \nYou think of yourself as such a fool, walk back and hear it again.. This time you ignore it. You Hear a klonk, your head aches \nYou fall down \neverything fades..");
+                            break;
+                        }
+
+                        else if (valik2 == "2")
+                        {
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou ignore it, \nand suddenly \nYou Hear a klonk, your head aches \nYou fall down \neverything fades..");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Choose the right number");
+                        }
+                    }
+                    
+                    while (true)
+                    {
+                        Console.WriteLine("\n\nYou are unconcious \n1.Try to wake up");
+                        string valik3 = Console.ReadLine();
+                        if (valik3 == "1")
+                        {
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou opened your eyes");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Choose the only option");
+                        }
+                                               
+                    }
+                    while (true)
+                    {
+                        Console.WriteLine("You hear some keys rambling in the distance \n1.Try to move \n2.Try Not to move");
+                        string valik4 = Console.ReadLine();
+                        if (valik4 == "1")
+                        {
+                            Console.WriteLine("You stayed still, you hear someone walking towards you");
+                            break;
+                        }
+                        else if (valik4 == "2")
+                        {
+                            Console.WriteLine("You tried to move, but cant move a muscle. You hear someone walking towards you");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Choose something");
+                        }
+                    }
+                    Console.WriteLine("You hear a torch being lit up");
                 }
             }
             Console.ReadLine();
