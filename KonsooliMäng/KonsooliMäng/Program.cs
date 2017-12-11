@@ -83,17 +83,17 @@ namespace KonsooliMäng
                 }
                 else if (path == "2")
                 {
-                    Console.WriteLine("You choose the left path");
+                    Console.WriteLine("You choose the left path\n");
                     break;
                 }
                 else if (path == "3")
                 {
-                    Console.WriteLine("You choose the middle path");
+                    Console.WriteLine("You choose the middle path\n");
                     break;
                 }
                 else if (path == "4")
                 {
-                    Console.WriteLine("You choose the right path");
+                    Console.WriteLine("You choose the right path\n");
                     break;
                 }
                 else
@@ -103,7 +103,23 @@ namespace KonsooliMäng
             }
             if (path == "2") //SEE ON GERDI OMA
             {
+                Console.WriteLine("You are attacked by a troll in the forest!");
+                Random randomNumber = new Random();
                 combat.Fight("Mob1");
+                Console.WriteLine("On ok? " + koletised.HP);
+                Console.WriteLine("What do you do?\n1. Attack the enemy\n2. Flee\n3. Block");
+                string vastus = Console.ReadLine();
+
+                if (vastus == "1")
+                {
+                    //Mob tuleb välja kutsuda muidu ei tööta
+                    koletised.Mob1();
+                    var damage = randomNumber.Next(statid.ATK - 6, statid.ATK + 2);
+                    koletised.HP = koletised.HP - damage;
+                    Console.WriteLine(koletised.HP);
+                }
+                
+
             }
             else if (path == "3") //SEE ON SIMO OMA
             {

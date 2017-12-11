@@ -14,11 +14,24 @@ namespace KonsooliMäng
 
             if (enemy == "Mob1")
             {
-                koletised.Mob1();
-                Console.WriteLine(koletised.HP);
+                koletised.Mob1();                
             }
+            else if (enemy == "Mob2")
+            {
+                koletised.Mob2();
+            }
+            else if (enemy == "Mob3")
+            {
+                koletised.Mob3();
+            }
+            else if (enemy == "BossMob")
+            {
+                koletised.BossMob();
+            }
+
             
-            Console.WriteLine(koletised.HP);
+            Console.WriteLine("The monster has " + koletised.HP + " health!\nThe monster can deal up to " + koletised.ATK + " damage!\n");
+            
         }
     }
 }
