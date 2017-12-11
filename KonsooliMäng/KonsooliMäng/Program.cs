@@ -11,6 +11,8 @@ namespace KonsooliMäng
         static void Main(string[] args)
         {
             Statid statid = new Statid();
+            Koletised koletised = new Koletised();
+            CombatSystem combat = new CombatSystem();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("The Mighty Adventures of Jaanus!");
             Console.WriteLine("Made by Moka Studio™ 2017\n");
@@ -101,7 +103,7 @@ namespace KonsooliMäng
             }
             if (path == "2") //SEE ON GERDI OMA
             {
-
+                combat.Fight("Mob1");
             }
             else if (path == "3") //SEE ON SIMO OMA
             {
