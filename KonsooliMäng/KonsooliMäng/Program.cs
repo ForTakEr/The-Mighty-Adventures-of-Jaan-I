@@ -109,7 +109,26 @@ namespace KonsooliMäng
             }
             else if (path == "4") //SEE ON KERDI OMA
             {
+                Console.WriteLine("--------------------------------------------------------------------------------------------------");
+                Console.WriteLine("\nYou embark on your journey, you start walking towards your path. \nTime passes \n\nYour mind wanders if this was the right choice, your heart stays true \nbut your mind questions. \n“Thou ought thunk he chosen the rightest of paths, ought to be'ist thar complicatest“ \nYou begin to see green leaves and green trees, night starts to overwhelm the sky. \nYou feel tired. You are thinking of making a camp");
+                Console.WriteLine("\nAre You going to find a campsite or going to get firewood. \n1.Get wood, then find camp \n2.Find campsite, then firewood");
+                string valik = Console.ReadLine();
+                if (valik == "1")
+                {
+                    Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest, and find some food. you found yourself some firewood. \nYou start to look for a campsite, you found it. It isn’t perfect, but it will do.");
 
+                }
+                else if (valik == "2")
+                {
+                    Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest for a campsite. \nYou found a nice place near a river. \nYou put your belongings on the ground and go to find firewood. \n\nYou found some firewood, but not much.");
+                }
+
+                Console.WriteLine("\nYou're sitting by the fire, you hear cracking sounds in the bushes. what do you do? \n1. Investigate \n2. Ignore");
+                string valik2 = Console.ReadLine();
+                if (valik2 == "1")
+                {
+                    Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight. You walk to the bushes, open them and punch whatever is inside. \nBut there was nothing inside there. \nYou think of yourself as such a fool, walk back and hear it again. This time you ignore it. \nThen you hear a klonk, your head hurts. \nYou fall to the ground. \nEverything fades...");
+                }
             }
             Console.ReadLine();
         }
