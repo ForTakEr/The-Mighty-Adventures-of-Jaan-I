@@ -103,7 +103,8 @@ namespace KonsooliMäng
             }
             if (path == "2") //SEE ON GERDI OMA
             {
-                Console.WriteLine("You are attacked by a troll in the forest!");
+                Console.WriteLine("Lisan lihtsalt midagi, et uus branch teha");
+                Console.WriteLine("You areasfrsegt attacked by a troll in the fasorest!");
                 Random randomNumber = new Random();
                 combat.Fight("Mob1");
                 Console.WriteLine("On ok? " + koletised.HP);
