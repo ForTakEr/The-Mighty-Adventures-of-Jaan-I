@@ -14,8 +14,6 @@ namespace KonsooliMäng
         public int MP;
         public int ATK;
 
-        //String klassiga saab klasside järgi panna mana ja hp jne.
-
         public void Knight()
         {
             HP = 20;
