@@ -143,7 +143,7 @@ namespace KonsooliMäng
                         string valik2 = Console.ReadLine();
                         if (valik2 == "1")
                         {
-                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight and ready to fight. You walk to the bushes, open them and slash \nwhatever is inside. \nThere was nothing there. \nYou think of yourself as such a fool, walk back and hear it again.. This time you ignore it. \nYou Hear a klonk, your head aches, \nyou fall down. \neverything fades..");
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight and ready to fight. You walk to the bushes, open them and \nslash whatever is inside. \nThere was nothing there. \nYou think of yourself as such a fool, walk back and hear it again.. This time you ignore it. \nYou Hear a klonk, your head aches, \nyou fall down. \neverything fades..");
                             break;
                         }
 
@@ -248,8 +248,13 @@ namespace KonsooliMäng
                             Console.WriteLine("choose again");
                         }
                     }
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("The masters are pleased");
-                    
+                    Console.ResetColor();
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("You win the game of life");
+                    Console.ResetColor();
                 }
             }
             Console.ReadLine();
