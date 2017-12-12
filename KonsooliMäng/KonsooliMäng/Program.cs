@@ -130,9 +130,9 @@ namespace KonsooliMäng
 
                 if (cmd == "1")
                 {
-                    Console.WriteLine("You slowly start walking torwards the sparkling object\nAs you get closer, you see what the sparkling object really is, it appears to be an old sword\nYou pick up the sword and feel and immense power run through you, you drop the sword because of shock, but pick it up right after that\nYou try swing the sword a few times with ease, it generates powerful winds with every swings");
-                    Console.WriteLine();
-                    Console.WriteLine("While trying out the sword a Water Dragon has come close to attack you\nThe battle begins with the dragon!");
+                    Console.WriteLine("You slowly start walking torwards the sparkling object\nAs you get closer, you see what the sparkling object really is, it appears to be an old weapon\nYou pick up the weapon and feel and immense power run through you, you drop the weapon because of shock, but pick it up right after that\nYou try swing the weapon a few times with ease, it generates powerful winds with every swings");
+                    Console.WriteLine();                    
+                    Console.WriteLine("While trying out the weapon a Water Dragon has come close to attack you\nThe battle begins with the dragon!");
                     Console.WriteLine("\nWhat do you wish to do?\n1. Attack\n2. Block");
                     while (true)
                     {
@@ -150,9 +150,8 @@ namespace KonsooliMäng
                             Console.WriteLine("The enemy has " + koletised.HP + " health left.\n");
                             if (koletised.HP <= 0)
                             {
-                                Console.WriteLine("You have killed the monster!");
-                                Console.WriteLine("The monster turns into dust and disappears!");
-                                Console.WriteLine("As you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
+                                Console.WriteLine("The monster starts turning to dust as you kill it");                                
+                                Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
                                 Console.WriteLine("THE END!");
 
                                 break;
@@ -190,8 +189,58 @@ namespace KonsooliMäng
                 }
                 else if (cmd == "3")
                 {
-                    Console.WriteLine("You choose to stay where you are for a while to see if something unusual happens to the object");
+                    Console.WriteLine("You choose to stay where you are for a while to see if something unusual happens to the object\nWhile you wait to see if something unusual happens to the sparkling object you are attacked by a Water Dragon");
+                    Console.WriteLine("What do you wish to do?\n1. Fight the Water Dragon\n2. Run towards the sparkling object\n3. Run into the forest\n4. Run under the Water dragon and try to hide yourself");
+                    string vastus = Console.ReadLine();
+                    while (vastus == "1")
+                    {
+                        //Fight
+                    }
+                    while (vastus == "2")
+                    {
+                        Console.WriteLine("You choose to run towards the sparkling object to escape the dragon");
+                        string käsk = Console.ReadLine();
 
+                        if (käsk == "1")
+                        {
+                            Random random = new Random();
+                            combat.Fight("BossMob");
+                            koletised.BossMob();
+                            var damage = random.Next(statid.ATK - 6, statid.ATK + 3);
+                            damage = damage + 4000;
+                            koletised.HP = koletised.HP - damage;
+                            Console.WriteLine("You deal " + damage + " damage to the enemy");
+                            Console.WriteLine("The enemy has " + koletised.HP + " health left.\n");
+                            if (koletised.HP <= 0)
+                            {
+                                Console.WriteLine("The monster starts turning into dust as you kill it");                                
+                                Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
+                                Console.WriteLine("THE END!");
+
+                                break;
+                            }
+                        }
+
+                        else if (käsk == "2")
+                        {
+                            Console.WriteLine("You blocked the attack and received 0 damage!");
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("You didn't choose a valid command!");
+                        }
+                    }
+                    while (vastus == "3")
+                    {
+                        Console.WriteLine("You decide to run into the forest to escape from the dragon\nYou run for a while and notice that you're being followed by 2 goblins\nYou continue running quivering in fear from the Water Dragon\nAs you look back you at the goblins and the Water Dragon in the distance you fall off the cliff which you didn't notice because you were looking back and die\nTHE END!");
+                        break;
+                    }
+                    while (vastus == "4")
+                    {
+                        Console.WriteLine("You decide to try and hide yourself under the Water Dragon\nYou start running towards the Water Dragon to get under it\nYou manage to get under it, but the Water Dragon stands up on two feet and grabs you with one hand\nThe Water Dragon roars in your face, making you quiver in fear and faint\nThe Water Dragon throws you in its mouth and swallows you whole\nTHE END!");
+                        break;
+                    }
                 }
 
             }
