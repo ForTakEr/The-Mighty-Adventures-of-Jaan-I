@@ -143,7 +143,7 @@ namespace KonsooliMäng
                         string valik2 = Console.ReadLine();
                         if (valik2 == "1")
                         {
-                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight and ready to fight. You walk to the bushes, open them and slash whatever is inside. \nThere was nothing there. \nYou think of yourself as such a fool, walk back and hear it again.. This time you ignore it. \nYou Hear a klonk, your head aches, \nyou fall down. \neverything fades..");
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight and ready to fight. You walk to the bushes, open them and slash \nwhatever is inside. \nThere was nothing there. \nYou think of yourself as such a fool, walk back and hear it again.. This time you ignore it. \nYou Hear a klonk, your head aches, \nyou fall down. \neverything fades..");
                             break;
                         }
 
@@ -198,27 +198,32 @@ namespace KonsooliMäng
                         string valik5 = Console.ReadLine();
                         if (valik5 == "1")
                         {
-                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grabbed his knife, he noticed. What do you do? \n1. Stab him. \n2.Threaten him.");
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grabbed his knife, he noticed. What do you do? \n1. Stab him. \n2. Threaten him.");
                             break;
                         }
                         if (valik5 == "2")
                         {
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stayed still");
+                            Console.WriteLine("He walks up to you, he notices you have moved. \nHe grabs his knife, What do you do? \n1. Try to block him from trying to stab you");
                             string valik7 = Console.ReadLine();
                             while (true)
                             {
-                                Console.WriteLine("He walks up to you, he notices you have moved. \nHe grabs his knife, What do you do? \n1. Try to block him from trying to stab you");
                                 if (valik7 == "1")
                                 {
-                                    Console.WriteLine("You failed to block him. \nYOU DIED");
+                                    Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou failed to block him.");
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("YOU DIED");
+                                    Console.ResetColor();
                                     break;
+                                    
                                 }
                                 else
                                 {
                                     Console.WriteLine("choose again");
                                 }
+                                break;
                             }
-                            break;
+                            
                         }
                         else
                         {
@@ -230,12 +235,12 @@ namespace KonsooliMäng
                     {
                         if (valik6 == "1")
                         {
-                            Console.WriteLine("You stabbed him");
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stabbed him");
                             break;
                         }
                         if (valik6 == "2")
                         {
-                            Console.WriteLine("You threatened him.");
+                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou threatened him.");
                             break;
                         }
                         else
