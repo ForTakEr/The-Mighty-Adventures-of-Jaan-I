@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace KonsooliMäng
@@ -171,19 +172,39 @@ namespace KonsooliMäng
                 }
                 else if (cmd == "2")
                 {
-                    Console.WriteLine("You choose to run off the path into the forest to avoid the sparkling object");
-                    Console.WriteLine("After walking for a while in the forest you notice that you're lost and don't know the way back to the path\nYou've been lost for so long that you don't even know how long it's been since then\nYou start to feel weakened because of hunger and dehydration\nWhile taking a small break you are ambushed by a couple of goblins");
-                    Console.WriteLine("You are unable to run away and the only option is to fight");
+                    Console.WriteLine("You choose to run off the path into the forest to avoid the sparkling object\n");
+                    Console.WriteLine("After walking for a while in the forest you notice that you're lost and don't know the way back to the path\nYou've been lost for so long that you don't even know how long it's been since then\nYou start to feel weakened because of hunger and dehydration\nWhile taking a small break you are ambushed by a goblin\n");
+                    Console.WriteLine("You are unable to run away and the only option is to fight\n");
                     Console.WriteLine("What do you do?\n1. Attack");
+
                     string vastus = Console.ReadLine();
+                    combat.Fight("Mob2");
+                    koletised.Mob2();
                     while (vastus == "1")
                     {
+                        int ms = 2000;
+                        
                         Random random = new Random();
-                        combat.Fight("Mob1" + "Mob2");
-                        koletised.Mob1();
-                        koletised.Mob2();
-                        var damage = random.Next(statid.ATK - 8, statid.ATK - 3);
-                        //Jätka siit combati edasi tegemisega
+                        var damage = random.Next(statid.ATK - 8, statid.ATK - 5);
+                        var MobDamage = random.Next(koletised.ATK - 2, koletised.ATK + 3);
+                        var elud = statid.HP - MobDamage;
+                        var MobElud = koletised.HP - damage;
+                        Console.WriteLine("The monster deals " + MobDamage + " damage!");
+                        Console.WriteLine("You have " + elud + " health left!");
+                        Thread.Sleep(ms);
+                        Console.WriteLine("You deal " + damage + " damage!");
+                        Console.WriteLine("The monster has " + MobElud + " health left!");
+                        Thread.Sleep(ms);
+                        Console.WriteLine("The monster deals " + MobDamage + " damage!");
+                        Console.WriteLine("You have " + elud + " health left!");
+                        if (elud == 0 || MobElud == 0)
+                        {
+                            Console.WriteLine("You have died!\nTHE END!");
+                            break;
+                        }
+
+                        break;
+                        
                     }
 
                 }
@@ -194,11 +215,29 @@ namespace KonsooliMäng
                     string vastus = Console.ReadLine();
                     while (vastus == "1")
                     {
-                        //Fight
+                        Random random = new Random();
+                        combat.Fight("BossMob");
+                        koletised.BossMob();
+                        var damage = random.Next(statid.ATK - 5, statid.ATK + 3);
+                        var MobDamage = random.Next(koletised.ATK - 10, koletised.ATK + 10);
+                        var elud = statid.HP - MobDamage;
+                        var MobElud = koletised.HP - damage;
+                        Console.WriteLine("You deal " + damage + " to the Water Dragon!");
+                        Console.WriteLine("The Water Dragon has " + koletised.HP + " health left!");
+                        int ms = 2000;
+                        Thread.Sleep(ms);
+                        Console.WriteLine("The Water Dragon attacks you for " + MobDamage + " damage!");
+                        Console.WriteLine("You have " + elud + " health left!");
+                        Thread.Sleep(ms);
+                        Console.WriteLine("The Water Dragon has brutally killed you!\nTHE END!");
+                        break;
                     }
                     while (vastus == "2")
                     {
                         Console.WriteLine("You choose to run towards the sparkling object to escape the dragon");
+                        Console.WriteLine("You pick up the sparkling object and the fight begins!");
+                        fight:
+                        Console.WriteLine("What do you do?\n1. Attack\n2. Block");
                         string käsk = Console.ReadLine();
 
                         if (käsk == "1")
@@ -224,6 +263,8 @@ namespace KonsooliMäng
                         else if (käsk == "2")
                         {
                             Console.WriteLine("You blocked the attack and received 0 damage!");
+                            Console.WriteLine("You have " + statid.HP + " health left!");
+                            goto fight;
                         }
 
                         else
