@@ -627,9 +627,9 @@ namespace KonsooliMäng
                         Thread.Sleep(ms);
                         Console.WriteLine("The monster deals " + MobDamage + " damage!");
                         Console.WriteLine("You have " + elud + " health left!");
-                        if (elud == 0 || MobElud == 0)
+                        if (elud == 0)
                         {
-                            Console.WriteLine("You have died!\nTHE END!");
+                            Console.WriteLine("You have died!");
                             break;
                         }
 
@@ -660,7 +660,7 @@ namespace KonsooliMäng
                         Console.WriteLine("The Water Dragon attacks you for " + MobDamage + " damage!");
                         Console.WriteLine("You have " + elud + " health left!");
                         Thread.Sleep(ms);
-                        Console.WriteLine("The Water Dragon has brutally killed you!\nTHE END!");
+                        Console.WriteLine("The Water Dragon has brutally killed you!");
                         break;
                     }
                     while (vastus == "2")
@@ -703,12 +703,12 @@ namespace KonsooliMäng
                     }
                     while (vastus == "3")
                     {
-                        Console.WriteLine("You decide to run into the forest to escape from the dragon\nYou run for a while and notice that you're being followed by 2 goblins\nYou continue running quivering in fear from the Water Dragon\nAs you look back you at the goblins and the Water Dragon in the distance you fall off the cliff which you didn't notice because you were looking back and die\nTHE END!");
+                        Console.WriteLine("You decide to run into the forest to escape from the dragon\nYou run for a while and notice that you're being followed by 2 goblins\nYou continue running quivering in fear from the Water Dragon\nAs you look back you at the goblins and the Water Dragon in the distance you fall off the cliff which you didn't notice because you were looking back and die");
                         break;
                     }
                     while (vastus == "4")
                     {
-                        Console.WriteLine("You decide to try and hide yourself under the Water Dragon\nYou start running towards the Water Dragon to get under it\nYou manage to get under it, but the Water Dragon stands up on two feet and grabs you with one hand\nThe Water Dragon roars in your face, making you quiver in fear and faint\nThe Water Dragon throws you in its mouth and swallows you whole\nTHE END!");
+                        Console.WriteLine("You decide to try and hide yourself under the Water Dragon\nYou start running towards the Water Dragon to get under it\nYou manage to get under it, but the Water Dragon stands up on two feet and grabs you with one hand\nThe Water Dragon roars in your face, making you quiver in fear and faint\nThe Water Dragon throws you in its mouth and swallows you whole");
                         break;
                     }
                 }
