@@ -611,6 +611,7 @@ namespace KonsooliMäng
                     koletised.Mob2();
                     while (vastus == "1")
                     {
+                        //EI TÖÖTA
                         int ms = 2000;
                         
                         Random random = new Random();
@@ -644,6 +645,7 @@ namespace KonsooliMäng
                     string vastus = Console.ReadLine();
                     while (vastus == "1")
                     {
+                        
                         Random random = new Random();
                         combat.Fight("BossMob");
                         koletised.BossMob();
@@ -664,9 +666,8 @@ namespace KonsooliMäng
                     while (vastus == "2")
                     {
                         Console.WriteLine("You choose to run towards the sparkling object to escape the dragon");
-                        Console.WriteLine("You pick up the sparkling object and the fight begins!");
-                        fight:
-                        Console.WriteLine("What do you do?\n1. Attack\n2. Block");
+                        Console.WriteLine("You pick up the sparkling object and the fight begins!\n");                        
+                        Console.WriteLine("What do you do?\n1. Attack\n2. Block\n");
                         string käsk = Console.ReadLine();
 
                         if (käsk == "1")
@@ -683,7 +684,6 @@ namespace KonsooliMäng
                             {
                                 Console.WriteLine("The monster starts turning into dust as you kill it");                                
                                 Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
-                                Console.WriteLine("THE END!");
 
                                 break;
                             }
@@ -693,7 +693,7 @@ namespace KonsooliMäng
                         {
                             Console.WriteLine("You blocked the attack and received 0 damage!");
                             Console.WriteLine("You have " + statid.HP + " health left!");
-                            goto fight;
+                            
                         }
 
                         else
@@ -718,7 +718,7 @@ namespace KonsooliMäng
             {
 
             }
-            Console.WriteLine("THE END");
+            Console.WriteLine("THE END!");
             Console.ReadLine();
         }
     }
