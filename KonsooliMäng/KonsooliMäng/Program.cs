@@ -348,30 +348,33 @@ namespace KonsooliMäng
 
                     if (vastus == "1")
                     {
-                        tagasi2:
-                        Console.WriteLine("You approach the woman and ask her what’s wrong\n“Well you see kind sir, i lost my puppy and i can’t seem to find her”\n1. Oh, i left her to die\n2. Never heard of no puppy\n");
-                        tegu = Console.ReadLine();
-
-                        if (tegu == "1")
+                        while (true)
                         {
-                            Console.WriteLine("“You… you did what?”\n1. I left her to die in the forest i was in, she was badly hurt\n2. JK\n");
-                            string action = Console.ReadLine();
+                            Console.WriteLine("You approach the woman and ask her what’s wrong\n“Well you see kind sir, i lost my puppy and i can’t seem to find her”\n1. Oh, i left her to die\n2. Never heard of no puppy\n");
+                            tegu = Console.ReadLine();
 
-                            if (action == "1")
+                            if (tegu == "1")
                             {
-                                Console.WriteLine("“OH NO ISABELLA” she screams as she runs past you to the forest");
+                                Console.WriteLine("“You… you did what?”\n1. I left her to die in the forest i was in, she was badly hurt\n2. JK\n");
+                                string action = Console.ReadLine();
+
+                                if (action == "1")
+                                {
+                                    Console.WriteLine("“OH NO ISABELLA” she screams as she runs past you to the forest");
+                                    scenario = "B";
+                                    break;
+                                }
+                                else if (action == "2")
+                                {
+                                    Console.WriteLine("“That’s a cruel joke”");
+                                }
+                            }
+                            else if (tegu == "2")
+                            {
+                                Console.WriteLine("“Okay… Sorry to bother you” ");
                                 scenario = "B";
+                                break;
                             }
-                            else if (action == "2")
-                            {
-                                Console.WriteLine("“That’s a cruel joke”");
-                                goto tagasi2;
-                            }
-                        }
-                        else if (tegu == "2")
-                        {
-                            Console.WriteLine("“Okay… Sorry to bother you” ");
-                            scenario = "B";
                         }
                     }
                     else if (vastus == "2")
