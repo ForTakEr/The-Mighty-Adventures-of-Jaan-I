@@ -252,34 +252,38 @@ namespace KonsooliMäng
                 }
                 string scenario = "";
                 bool dog = false;
-                tagasi:
-                Console.WriteLine("While walking through the field you come across a wild dog, limping.\n1. Kill the fucking dog like a heartless son of a bitch\n2. Feed the dog and patch him up\n3. Leave him there like the cold bitch (dog pun) you are\n");
-                vastus = Console.ReadLine();
+                while (true)
+                {
+                    Console.WriteLine("While walking through the field you come across a wild dog, limping.\n1. Kill the fucking dog like a heartless son of a bitch\n2. Feed the dog and patch him up\n3. Leave him there like the cold bitch (dog pun) you are\n");
+                    vastus = Console.ReadLine();
 
-                if (vastus == "1")
-                {
-                    Console.WriteLine("The dog looks at you with sad eyes, are you sure you want to do this?\n1. YES\n2. No, i was kidding");
-                    string tapmine = Console.ReadLine();
-                    if (tapmine == "1")
+                    if (vastus == "1")
                     {
-                        Console.WriteLine("You try to attack the dog, but you end up having a heart attack, the gods were not pleased with your actions");
-                        Console.WriteLine("-10 000 HP");
-                        Console.ReadLine();
-                        Environment.Exit(0);
+                        Console.WriteLine("The dog looks at you with sad eyes, are you sure you want to do this?\n1. YES\n2. No, i was kidding");
+                        string tapmine = Console.ReadLine();
+                        if (tapmine == "1")
+                        {
+                            Console.WriteLine("You try to attack the dog, but you end up having a heart attack, the gods were not pleased with your actions");
+                            Console.WriteLine("-10 000 HP");
+                            Console.ReadLine();
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    else if (vastus == "2")
                     {
-                        goto tagasi;
+                        Console.WriteLine("You patch up the dog and it wags it’s tail in delight. You have earned a loyal companion (he won’t fight for you though, it’s a fucking dog don’t go throwing it at enemies, love it)");
+                        dog = true;
+                        break;
                     }
-                }
-                else if (vastus == "2")
-                {
-                    Console.WriteLine("You patch up the dog and it wags it’s tail in delight. You have earned a loyal companion (he won’t fight for you though, it’s a fucking dog don’t go throwing it at enemies, love it)");
-                    dog = true;
-                }
-                else if (vastus == "3")
-                {
-                    Console.WriteLine("You leave the dog");
+                    else if (vastus == "3")
+                    {
+                        Console.WriteLine("You leave the dog");
+                        break;
+                    }
                 }
                 if (dog == true)
                 {
