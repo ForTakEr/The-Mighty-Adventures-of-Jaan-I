@@ -1,1 +1,1 @@
-# The Mighty Adventures of Jaan I
+# The Mighty Adventures of Jaanus I
