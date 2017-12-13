@@ -586,7 +586,7 @@ namespace KonsooliMäng
                 
             }
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("                      `````         ````      `-::-.`            `````       ````                       ");
+            Console.WriteLine("                      `````          ````       `-::-.`           `````       ````                       ");
             Console.WriteLine("                      .dMNNh`     .dNNNy`     :ymNMMMMMNds -      sNNNs     `dNMM:");
             Console.WriteLine("                       `yMMMd.   - mMMNs.   hMMMmyooohNMMNy`     sMMMs      `dMMM:");
             Console.WriteLine("                         oNMMN: / NMMN /  .mMMMo`     .yMMMh`    sMMMs      `dMMM:");
