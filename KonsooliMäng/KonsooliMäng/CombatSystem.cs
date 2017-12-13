@@ -224,6 +224,7 @@ namespace KonsooliMäng
                 Thread.Sleep(ms);
                 Console.Clear();
             }
+            Thread.Sleep(2000);
             Console.Clear();
         }
     }
