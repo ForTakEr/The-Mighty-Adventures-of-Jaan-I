@@ -53,7 +53,7 @@ namespace KonsooliMäng
                 }
                 else
                 {
-                    Console.WriteLine("Not an option (...the f***?)\n");
+                    Console.WriteLine("Not an option (...the duck?)\n");
                 }
                 Console.Clear();
             }
