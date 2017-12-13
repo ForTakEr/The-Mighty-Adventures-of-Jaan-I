@@ -478,13 +478,12 @@ namespace KonsooliMäng
                     }
                     
                     while (true)
-                    {
-                        Console.Clear();
+                    {                        
                         Console.WriteLine("\n\nYou are unconcious.. \n1.Try to wake up.");
                         string valik3 = Console.ReadLine();
                         if (valik3 == "1")
                         {
-                            Console.Clear();
+                            
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou opened your eyes.");
                             break;
                         }
@@ -497,7 +496,7 @@ namespace KonsooliMäng
                     }
                     while (true)
                     {
-                        Console.Clear();
+                        
                         Console.WriteLine("You hear some keys rambling in the distance. \n1.Try to move. \n2.Try Not to move.");
                         string valik4 = Console.ReadLine();
                         if (valik4 == "2")
@@ -544,8 +543,9 @@ namespace KonsooliMäng
                                     Console.ForegroundColor = ConsoleColor.Red;
                                     Console.WriteLine("YOU HAVE DIED!");
                                     Console.ResetColor();
-                                    break;
-                                    
+                                    Thread.Sleep(1500);
+                                    Environment.Exit(0);
+                                                                        
                                 }
                                 else
                                 {
