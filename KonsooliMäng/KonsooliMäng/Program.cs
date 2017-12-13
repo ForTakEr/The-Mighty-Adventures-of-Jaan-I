@@ -13,6 +13,7 @@ namespace KonsooliMäng
         {
             int ms = 1000;
             Statid statid = new Statid();
+            Random randomNumber = new Random();
             Koletised koletised = new Koletised();
             CombatSystem combat = new CombatSystem();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -160,66 +161,13 @@ namespace KonsooliMäng
                         }
                     }
                 }
-
-                Random randomNumber = new Random();
-                combat.Fight("Mob1");
-                koletised.Mob1();
-                while (true)
-                {
-                    Console.WriteLine("What do you do?\n1. Attack the enemy\n2. Flee\n3. Block");
-                    tegu = Console.ReadLine();
-
-                    if (tegu == "1")
-                    {
-                        //Mob tuleb välja kutsuda muidu ei tööta
-                        
-                        var damage = randomNumber.Next(statid.ATK - 6, statid.ATK + 2);
-                        koletised.HP = koletised.HP - damage;
-                        Console.WriteLine(koletised.HP);
-                        if (koletised.HP <= 0 || statid.HP == 0)
-                        {
-                            break;
-                        }
-                    }
-                }
-                if (statid.HP == 0)
-                {
-                    Console.WriteLine("Your life fades away, it's game over for you");
-                    Console.ReadLine();
-                    Environment.Exit(0);
-                }
-
+                combat.Fight(5, 50, "Stone golem", statid, false, false);
                 Console.WriteLine("With the monster slain the fog dissipates and your mind feels clearer, you feel confident in your ability to leave the forest, but at the same time you feel tired enough to fall asleep right where you’re standing\n1. Continue on the trail\n2. Rest at the grove\n");
                 vastus = Console.ReadLine();
                 if (vastus == "1")
                 {
                     Console.WriteLine("You walk on the trail in the middle of the night and hear shuffling in a nearby bush, a puma plunges at you.");
-                    combat.Fight("Mob2");
-                    koletised.Mob2();
-                    while (true)
-                    {
-                        Console.WriteLine("What do you do?\n1. Attack the enemy\n2. Flee\n3. Block");
-                        tegu = Console.ReadLine();
-
-                        if (tegu == "1")
-                        {
-                            //Mob tuleb välja kutsuda muidu ei tööta
-                            
-                            var damage = randomNumber.Next(statid.ATK - 6, statid.ATK + 2);
-                            koletised.HP = koletised.HP - damage;
-                            Console.WriteLine(koletised.HP);
-                            if (koletised.HP <= 0 || statid.HP == 0)
-                            {
-                                break;
-                            }
-                        }
-                    }
-                    if (statid.HP == 0)
-                    {
-                        Console.WriteLine("Your life fades away, it's game over for you");
-                        Console.ReadLine();
-                        Environment.Exit(0);
-                    }
+                    combat.Fight(8, 70, "Puma", statid, false, false);
                     Console.WriteLine("After defeating the puma and walking for hours on end you finally reach the end of the forest, ahead of you is a large field. You feel so exhausted you collapse.");
                     Console.WriteLine("You wake up and it’s the middle of the day, the field hasn’t moved and neither have you, what do you want to do?\n");
                 }
@@ -233,32 +181,7 @@ namespace KonsooliMäng
                 if (vastus != "1")
                 {
                     Console.WriteLine("You head back to the forest and see multiple monsters, one of them attacks you\n");
-                    combat.Fight("Mob1");
-                    koletised.Mob1();
-                    while (true)
-                    {
-                        Console.WriteLine("What do you do?\n1. Attack the enemy\n2. Flee\n3. Block");
-                        tegu = Console.ReadLine();
-
-                        if (tegu == "1")
-                        {
-                            //Mob tuleb välja kutsuda muidu ei tööta
-                            var damage = randomNumber.Next(statid.ATK - 6, statid.ATK + 2);
-                            koletised.HP = koletised.HP - damage;
-                            Console.WriteLine(koletised.HP);
-                            if (koletised.HP <= 0 || statid.HP == 0)
-                            {
-                                break;
-                            }
-                        }
-                    }
-                    if (statid.HP == 0)
-                    {
-                        Console.WriteLine("Your life fades away, it's game over for you");
-                        Console.ReadLine();
-                        Environment.Exit(0);
-                    }
-                    Console.WriteLine("After killing the monster you decide to wisen up and walk through the field");
+                    combat.Fight(5, 50, "Monster", statid, false, false);
                 }
                 string scenario = "";
                 bool dog = false;
@@ -395,170 +318,23 @@ namespace KonsooliMäng
                 if (scenario == "A" && dog == true)
                 {
                     Console.WriteLine("“Oh Isabella how i have missed you. please take this for your trouble” You got 10 000 gold.\n“If you’re looking for the town of Cakinass it’s 5 km to the north of here” Cakinass, the name sounds so familiar on your tongue, you feel like it might be your home\nYou head to the town of Cakinass where a large water dragon is looming over the church tower.It flies at you.\n");
-                    combat.Fight("BossMob");
-                    koletised.BossMob();
-                    while (true)
-                    {
-                        Console.WriteLine("What do you do?\n1. Attack the enemy\n2. Flee\n3. Block\n4. Throw gold at the dragon\n");
-                        tegu = Console.ReadLine();
-
-                        if (tegu == "1")
-                        {
-                            //Mob tuleb välja kutsuda muidu ei tööta
-                            
-                            var damage = randomNumber.Next(statid.ATK - 6, statid.ATK + 2);
-                            koletised.HP = koletised.HP - damage;
-                            Console.WriteLine(koletised.HP);
-                            if (koletised.HP <= 0 || statid.HP == 0)
-                            {
-                                break;
-                            }
-                        }
-                        else if (tegu == "4")
-                        {
-                            Console.WriteLine("Overcome by greed the dragon picks up the gold and flies away");
-                            break;
-                        }
-                    }
-                    if (statid.HP == 0)
-                    {
-                        Console.WriteLine("You feel your life fade away, it's game over for you");
-                        Console.ReadLine();
-                        Environment.Exit(0);
-                    }
-                    else if (tegu == "4")
-                    {
-                        Console.WriteLine("HUZZAH VICTORY");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You kill the dragon and find your way home\n HUZZAH VICTORY");
-                    }
+                    combat.Fight(100, 2000, "Dragon", statid, dog, true);
+                    Console.WriteLine("HUZZAH VICTORY");
                 }
                 else if (scenario == "B" && dog == true)
                 {
                     Console.WriteLine("You head toward where you were going before all the trouble and find yourself in a town with a water dragon looming over the church watch tower. It flies at you.\n");
-                    combat.Fight("BossMob");
-                    koletised.BossMob();
-                    while (true)
-                    {
-                        Console.WriteLine("What do you do?\n1. Attack the enemy\n2. Flee\n3. Block\n4. Have your dog bark at the dragon\n");
-                        tegu = Console.ReadLine();
-
-                        if (tegu == "1")
-                        {
-                            //Mob tuleb välja kutsuda muidu ei tööta
-                            
-                            var damage = randomNumber.Next(statid.ATK - 6, statid.ATK + 2);
-                            koletised.HP = koletised.HP - damage;
-                            Console.WriteLine(koletised.HP);
-                            if (koletised.HP <= 0 || statid.HP == 0)
-                            {
-                                break;
-                            }
-                        }
-                        else if (tegu == "4")
-                        {
-                            Console.WriteLine("Your dog barks at the dragon with great fierceness, the dragon flies away");
-                            break;
-                        }
-                    }
-                    if (statid.HP == 0)
-                    {
-                        Console.WriteLine("You feel your life fade away, it's game over for you");
-                        Console.ReadLine();
-                        Environment.Exit(0);
-                    }
-                    else if (tegu == "4")
-                    {
-                        Console.WriteLine("HUZZAH VICTORY");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You kill the dragon and find your way home\n HUZZAH VICTORY");
-                    }
+                    combat.Fight(100, 2000, "Dragon", statid, dog, false);
                 }
                 else if (scenario == "A" && dog == true)
                 {
                     Console.WriteLine("Feeling the gold in your satchel and the dog by your side makes you feel invincible as you make it to the town of Cakinass, apparently. There you notice a large water dragon atop a church tower. It flies at you.\n");
-                    combat.Fight("BossMob");
-                    koletised.BossMob();
-                    while (true)
-                    {
-                        Console.WriteLine("What do you do?\n1. Attack the enemy\n2. Flee\n3. Block\n4. Have your dog bark at the dragon\n5. Throw gold at the dragon");
-                        tegu = Console.ReadLine();
-
-                        if (tegu == "1")
-                        {
-                            //Mob tuleb välja kutsuda muidu ei tööta
-                            
-                            var damage = randomNumber.Next(statid.ATK - 6, statid.ATK + 2);
-                            koletised.HP = koletised.HP - damage;
-                            Console.WriteLine(koletised.HP);
-                            if (koletised.HP <= 0 || statid.HP == 0)
-                            {
-                                break;
-                            }
-                        }
-                        else if (tegu == "4")
-                        {
-                            Console.WriteLine("Your dog barks at the dragon with great fierceness, the dragon flies away");
-                            break;
-                        }
-                        else if (tegu == "5")
-                        {
-                            Console.WriteLine("Overcome by greed the dragon picks up the gold and flies away");
-                            break;
-                        }
-                    }
-                    if (statid.HP == 0)
-                    {
-                        Console.WriteLine("You feel your life fade away, it's game over for you");
-                        Console.ReadLine();
-                        Environment.Exit(0);
-                    }
-                    else if (tegu == "4" || tegu == "5")
-                    {
-                        Console.WriteLine("HUZZAH VICTORY");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You kill the dragon and find your way home\nHUZZAH VICTORY");
-                    }
+                    combat.Fight(100, 2000, "Dragon", statid, dog, true);
                 }
                 else if (scenario == "B" && dog == false)
                 {
                     Console.WriteLine("You head toward where you were going before all the trouble and find yourself in a town with a water dragon looming over the church watch tower. It flies at you.\n");
-                    combat.Fight("BossMob");
-                    koletised.BossMob();
-                    while (true)
-                    {
-                        Console.WriteLine("What do you do?\n1. Attack the enemy\n2. Flee\n3. Block");
-                        tegu = Console.ReadLine();
-
-                        if (tegu == "1")
-                        {
-                            //Mob tuleb välja kutsuda muidu ei tööta
-                            
-                            var damage = randomNumber.Next(statid.ATK - 6, statid.ATK + 2);
-                            koletised.HP = koletised.HP - damage;
-                            Console.WriteLine(koletised.HP);
-                            if (koletised.HP <= 0 || statid.HP == 0)
-                            {
-                                break;
-                            }
-                        }
-                    }
-                    if (statid.HP == 0)
-                    {
-                        Console.WriteLine("You feel your life fade away, it's game over for you");
-                        Console.ReadLine();
-                        Environment.Exit(0);
-                    }
-                    else
-                    {
-                        Console.WriteLine("You kill the dragon and find your way home\n HUZZAH VICTORY");
-                    }
+                    combat.Fight(100, 2000, "Dragon", statid, dog, false);
                 }
             }
             else if (path == "3") //SEE ON SIMO OMA
@@ -573,77 +349,17 @@ namespace KonsooliMäng
                     Console.WriteLine("You slowly start walking torwards the sparkling object\nAs you get closer, you see what the sparkling object really is, it appears to be an old weapon\nYou pick up the weapon and feel and immense power run through you, you drop the weapon because of shock, but pick it up right after that\nYou try swing the weapon a few times with ease, it generates powerful winds with every swings");
                     Console.WriteLine();                    
                     Console.WriteLine("While trying out the weapon a Water Dragon has come close to attack you\nThe battle begins with the dragon!");
-                    Console.WriteLine("\nWhat do you wish to do?\n1. Attack\n2. Block");
-                    while (true)
-                    {
-                        string käsk = Console.ReadLine();
-                        
-                        if (käsk == "1")
-                        {
-                            Random random = new Random();
-                            combat.Fight("BossMob");
-                            koletised.BossMob();
-                            var damage = random.Next(statid.ATK - 6, statid.ATK + 3);
-                            damage = damage + 4000;
-                            koletised.HP = koletised.HP - damage;
-                            Console.WriteLine("You deal " + damage + " damage to the enemy");
-                            Console.WriteLine("The enemy has " + koletised.HP + " health left.\n");
-                            if (koletised.HP <= 0)
-                            {
-                                Console.WriteLine("The monster starts turning to dust as you kill it");                                
-                                Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
-                                Console.WriteLine("THE END!");
-
-                                break;
-                            }
-                        }
-
-                        else if (käsk == "2")
-                        {
-                            Console.WriteLine("You blocked the attack and received 0 damage!");
-                        }
-
-                        else
-                        {
-                            Console.WriteLine("You didn't choose a valid command!");
-                        }
-                    }
+                    statid.ATK += 4000;
+                    combat.Fight(100, 2000, "Water Dragon", statid, false, false);
+                    Console.WriteLine("The monster starts turning to dust as you kill it");                                
+                    Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
                 }
                 else if (cmd == "2")
                 {
                     Console.WriteLine("You choose to run off the path into the forest to avoid the sparkling object\n");
                     Console.WriteLine("After walking for a while in the forest you notice that you're lost and don't know the way back to the path\nYou've been lost for so long that you don't even know how long it's been since then\nYou start to feel weakened because of hunger and dehydration\nWhile taking a small break you are ambushed by a goblin\n");
                     Console.WriteLine("You are unable to run away and the only option is to fight\n");
-                    Console.WriteLine("What do you do?\n1. Attack");
-
-                    string vastus = Console.ReadLine();
-                    combat.Fight("Mob2");
-                    koletised.Mob2();
-                    while (vastus == "1")
-                    {
-                        //EI TÖÖTA
-                                               
-                        Random random = new Random();
-                        int damage = random.Next(statid.ATK - 6, statid.ATK - 4);
-                        int MobDamage = random.Next(koletised.ATK - 2, koletised.ATK + 3);
-                        int elud = statid.HP - MobDamage;
-                        int MobElud = koletised.HP - damage;
-                        
-                        Console.WriteLine("The monster deals " + MobDamage + " damage!");
-                        Console.WriteLine("You have " + elud + " health left!");
-                        Thread.Sleep(ms);
-                        Console.WriteLine("You deal " + damage + " damage!");
-                        Console.WriteLine("The monster has " + MobElud + " health left!");
-                        Thread.Sleep(ms);
-                        Console.WriteLine("The monster deals " + MobDamage + " damage!");
-                        Console.WriteLine("You have " + elud + " health left!");
-                        if (elud <= 0)
-                        {
-                            Console.WriteLine("You have died!");
-                            break;
-                        }                                                                        
-                    }
-
+                    combat.Fight(100, 2000, "Water Dragon", statid, false, false);
                 }
                 else if (cmd == "3")
                 {
@@ -652,61 +368,18 @@ namespace KonsooliMäng
                     string vastus = Console.ReadLine();
                     while (vastus == "1")
                     {
-                        
-                        Random random = new Random();
-                        combat.Fight("BossMob");
-                        koletised.BossMob();
-                        var damage = random.Next(statid.ATK - 5, statid.ATK + 3);
-                        var MobDamage = random.Next(koletised.ATK - 10, koletised.ATK + 10);
-                        var elud = statid.HP - MobDamage;
-                        var MobElud = koletised.HP - damage;
-                        Console.WriteLine("You deal " + damage + " to the Water Dragon!");
-                        Console.WriteLine("The Water Dragon has " + koletised.HP + " health left!");
-                        
-                        Thread.Sleep(ms);
-                        Console.WriteLine("The Water Dragon attacks you for " + MobDamage + " damage!");
-                        Console.WriteLine("You have " + elud + " health left!");
-                        Thread.Sleep(ms);
-                        Console.WriteLine("The Water Dragon has brutally killed you!");
+                        combat.Fight(100, 2000, "Dragon", statid, false, false);
                         break;
                     }
                     while (vastus == "2")
                     {
                         Console.WriteLine("You choose to run towards the sparkling object to escape the dragon");
-                        Console.WriteLine("You pick up the sparkling object and the fight begins!\n");                        
-                        Console.WriteLine("What do you do?\n1. Attack\n2. Block\n");
-                        string käsk = Console.ReadLine();
-
-                        if (käsk == "1")
-                        {
-                            Random random = new Random();
-                            combat.Fight("BossMob");
-                            koletised.BossMob();
-                            var damage = random.Next(statid.ATK - 6, statid.ATK + 3);
-                            damage = damage + 4000;
-                            koletised.HP = koletised.HP - damage;
-                            Console.WriteLine("You deal " + damage + " damage to the enemy");
-                            Console.WriteLine("The enemy has " + koletised.HP + " health left.\n");
-                            if (koletised.HP <= 0)
-                            {
-                                Console.WriteLine("The monster starts turning into dust as you kill it");                                
-                                Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
-
-                                break;
-                            }
-                        }
-
-                        else if (käsk == "2")
-                        {
-                            Console.WriteLine("You blocked the attack and received 0 damage!");
-                            Console.WriteLine("You have " + statid.HP + " health left!");
-                            
-                        }
-
-                        else
-                        {
-                            Console.WriteLine("You didn't choose a valid command!");
-                        }
+                        Console.WriteLine("You pick up the sparkling object and the fight begins!\n");
+                        statid.ATK += 4000;
+                        combat.Fight(100, 2000, "Dragon", statid, false, false);
+                        Console.WriteLine("The monster starts turning into dust as you kill it");                                
+                        Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
+                        break;
                     }
                     while (vastus == "3")
                     {
