@@ -11,20 +11,17 @@ namespace KonsooliMäng
     {
         static void Main(string[] args)
         {
-            int ms = 1000;
             Statid statid = new Statid();
             Koletised koletised = new Koletised();
             CombatSystem combat = new CombatSystem();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("The Mighty Adventures of Jaanus!");
             Console.WriteLine("Made by Moka Studio™ 2017\n");
-            Thread.Sleep(ms);
-            Console.Clear();
             while (true)
             {
                 Console.WriteLine("You are the mighty adventurer Jaanus");
                 Console.WriteLine("Choose his class and title (same thing really)\n");
-                Console.WriteLine("*Knight\n*Mage\n*Archer\n*Rogue");                            
+                Console.WriteLine("*Knight\n*Mage\n*Archer\n*Rogue");
                 string klass = Console.ReadLine();
 
                 if (klass == "Knight" || klass == "knight")
@@ -55,13 +52,10 @@ namespace KonsooliMäng
                 {
                     Console.WriteLine("Not an option (...the duck?)\n");
                 }
-                Console.Clear();
             }
 
             while (true)
             {
-                
-                Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine("You wake up in a strange forest, everything around you is dark and creepy... you hear thunder in the distance. You clutch your weapon in fear. It's frightening, what do you do?\n1. Look around\n2. Take a rest");
                 string response = Console.ReadLine();
@@ -81,7 +75,6 @@ namespace KonsooliMäng
             string path;
             while (true)
             {
-                
                 Console.WriteLine("You notice 3 pathways in the distance, you go closer and notice an old ghost-man is in front of one of the paths, he proclaims: “One of these paths will bring you good fortune, the others only hardship CHOOSE WISELY FOR IT CANNOT BE CHANGED LATER!”\n1. Ask him for advice\n2. Choose the left path\n3. Choose the middle path\n4. Choose the right path\n");
                 path = Console.ReadLine();
                 if (path == "1")
@@ -108,12 +101,9 @@ namespace KonsooliMäng
                 {
                     Console.WriteLine("Please choose one of the options\n");
                 }
-                Thread.Sleep(ms);
-                Console.Clear();
             }
             if (path == "2") //SEE ON GERDI OMA
             {
-                Console.Clear();
                 string tegu = "1";
                 Console.WriteLine("As you walk the left path you feel a sense of dread, you wonder if you made the right choice, it probably doesn’t matter anyway, that old fart was just playing games with me, but that fog is really worrying.\nHours seem to pass by uneventful when you realize that you have already passed this grove.\n1. Start running\n2. Inspect the grove\n");
                 string vastus = Console.ReadLine();
@@ -622,7 +612,7 @@ namespace KonsooliMäng
                     while (vastus == "1")
                     {
                         //EI TÖÖTA
-                                               
+                        int ms = 2000;                        
                         Random random = new Random();
                         int damage = random.Next(statid.ATK - 6, statid.ATK - 4);
                         int MobDamage = random.Next(koletised.ATK - 2, koletised.ATK + 3);
@@ -662,7 +652,7 @@ namespace KonsooliMäng
                         var MobElud = koletised.HP - damage;
                         Console.WriteLine("You deal " + damage + " to the Water Dragon!");
                         Console.WriteLine("The Water Dragon has " + koletised.HP + " health left!");
-                        
+                        int ms = 2000;
                         Thread.Sleep(ms);
                         Console.WriteLine("The Water Dragon attacks you for " + MobDamage + " damage!");
                         Console.WriteLine("You have " + elud + " health left!");
