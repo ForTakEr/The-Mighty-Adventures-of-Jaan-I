@@ -525,11 +525,7 @@ namespace KonsooliMäng
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stabbed him");
                             break;
                         }
-                        if (valik6 == "2")
-                        {
-                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou threatened him.");
-                            break;
-                        }
+                        
                         else
                         {
                             Console.WriteLine("choose again");
@@ -538,13 +534,41 @@ namespace KonsooliMäng
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("The masters are pleased");
                     Console.ResetColor();
-
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("You win the game of life");
-                    Console.ResetColor();
+                    break;
                 }
+                
             }
-            Console.WriteLine("THE END!");
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("                      `````         ````      `-::-.`            `````       ````                       ");
+            Console.WriteLine("                      .dMNNh`     .dNNNy`     :ymNMMMMMNds -      sNNNs     `dNMM:");
+            Console.WriteLine("                       `yMMMd.   - mMMNs.   hMMMmyooohNMMNy`     sMMMs      `dMMM:");
+            Console.WriteLine("                         oNMMN: / NMMN /  .mMMMo`     .yMMMh`    sMMMs      `dMMM:");
+            Console.WriteLine("                          / NMMNyNMMm -   sMMMy        `dMMM /   sMMMs      `dMMM:");
+            Console.WriteLine("                            - mMMMMMd.   dMMM +   .``   sMMMs    sMMMs      `dMMM:");
+            Console.WriteLine("                             .mMMMh`     yMMMs.-`        hMMM +  sMMMs      `dMMM: ");
+            Console.WriteLine("                              hMMM +     -NMMN:         +NMMm.   oMMMh.      mMMM:                      ");
+            Console.WriteLine("                              hMMM +       :mMMNh +:::odMMMd -   .mMMMh +:::+dMMMy`                      ");
+            Console.WriteLine("                              hMMM +        `omMMMMMMMMNd +`     .smMMMMMMMMMm +`                       ");
+            Console.WriteLine("                               -:::.           .:+ooo /:`           -/ +ooo +:.                          ");
+            Console.WriteLine("                                                                                                       ");
+            Console.WriteLine("                                                                                                    ");
+            Console.WriteLine("                        `::::         -:::`     -:::` .:::.   .:::-       .:::`                        ");
+            Console.WriteLine("                         dMMN /     :MMMM +     .NMMm`  sMMMs   sMMMNo        yMMM:");
+            Console.WriteLine("                         :NMMd      hMMMMm`     sMMM +  sMMMs   sMMMMMy`      yMMM:");
+            Console.WriteLine("                          hMMM:    :MMNNMM /   .NMMd`   sMMMs   sMMMNMMd -    yMMM:          ");
+            Console.WriteLine("                          :NMMh   `hMMysMMd`    sMMN /  sMMMs   sMMM+dMMN /   yMMM:      ");
+            Console.WriteLine("                          :NMMh  `hMMysMMd`    sMMN /   sMMMs   sMMM + dMMN / yMMM:      ");
+            Console.WriteLine("                           hMMN -/ MMN -.NMM +.mMMh`    sMMMs   sMMM /` yMMNo yMMM:");
+            Console.WriteLine("                          - NMMydMMh      sMMdoMMN:     sMMMs   sMMM /   +NMMyhMMM:      ");
+            Console.WriteLine("                            yMMMMMN -      .NMMMMMh     sMMMs   sMMM /    :mMMMMMM:");
+            Console.WriteLine("                            .NMMMMh         yMMMMN -    sMMMs   sMMM /     .dMMMMM:      ");
+            Console.WriteLine("                             sNNNN:         .NNNNy      sNNNs   sNNM /      `yNNNM: ");
+            Console.WriteLine("                              ````           ````       `````   ````           ````      ");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("You win the game of life");
+            Console.ResetColor();
             Console.ReadLine();
         }
     }
