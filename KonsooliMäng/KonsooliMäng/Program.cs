@@ -72,6 +72,7 @@ namespace KonsooliMäng
                 else if (response == "2")
                 {
                     Console.WriteLine("You have more important things to do than that.");
+                    Thread.Sleep(ms);
                 }
                 else
                 {
