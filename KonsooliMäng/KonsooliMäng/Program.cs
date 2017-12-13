@@ -14,9 +14,9 @@ namespace KonsooliMäng
             int ms = 1000;
             Statid statid = new Statid();
             Random randomNumber = new Random();
-            Koletised koletised = new Koletised();
             CombatSystem combat = new CombatSystem();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             Console.WriteLine("The Mighty Adventures of Jaanus!");
             Console.WriteLine("Made by Moka Studio™ 2017\n");
             Thread.Sleep(ms);
