@@ -14,9 +14,9 @@ namespace KonsooliMäng
             int ms = 1000;
             Statid statid = new Statid();
             Random randomNumber = new Random();
-            Koletised koletised = new Koletised();
             CombatSystem combat = new CombatSystem();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             Console.WriteLine("The Mighty Adventures of Jaanus!");
             Console.WriteLine("Made by Moka Studio™ 2017\n");
             Thread.Sleep(ms);
@@ -333,7 +333,7 @@ namespace KonsooliMäng
                 {
                     Console.WriteLine("“Oh Isabella how i have missed you. please take this for your trouble” You got 10 000 gold.\n“If you’re looking for the town of Cakinass it’s 5 km to the north of here” Cakinass, the name sounds so familiar on your tongue, you feel like it might be your home\nYou head to the town of Cakinass where a large water dragon is looming over the church tower.It flies at you.\n");
                     Thread.Sleep(ms);
-                    combat.Fight(100, 2000, "Dragon", statid, dog, true);
+                    combat.Fight(100, 2000, "Dragon", statid, false, true);
                     Console.WriteLine("HUZZAH VICTORY");
                 }
                 else if (scenario == "B" && dog == true)
