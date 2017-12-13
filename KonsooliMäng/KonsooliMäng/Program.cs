@@ -82,6 +82,7 @@ namespace KonsooliMäng
             string path;
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("You notice 3 pathways in the distance, you go closer and notice an old ghost-man is in front of one of the paths, he proclaims: “One of these paths will bring you good fortune, the others only hardship CHOOSE WISELY FOR IT CANNOT BE CHANGED LATER!”\n1. Ask him for advice\n2. Choose the left path\n3. Choose the middle path\n4. Choose the right path\n");
                 path = Console.ReadLine();
                 if (path == "1")
@@ -355,6 +356,7 @@ namespace KonsooliMäng
             }
             else if (path == "3") //SEE ON SIMO OMA
             {
+                Console.Clear();
                 Console.WriteLine("As you start walking down the middle path, you start to wonder if you made the right choice.\nYou walk for hours to no end and you are still in the mysterious forest with no way out.\nYou continue walking and suddenly you notice something sparkling in the distance...\n");
                 Console.WriteLine("--------------------------------------------------");
                 Console.WriteLine("What do you wish to do?\n1. Go see what's sparkling in the distance\n2. Steer off the path to avoid the sparkling object\n3. Stay where you are for a while to see if something happens to the object");
@@ -362,6 +364,7 @@ namespace KonsooliMäng
 
                 if (cmd == "1")
                 {
+                    Console.Clear();
                     Console.WriteLine("You slowly start walking torwards the sparkling object\nAs you get closer, you see what the sparkling object really is, it appears to be an old weapon\nYou pick up the weapon and feel and immense power run through you, you drop the weapon because of shock, but pick it up right after that\nYou try swing the weapon a few times with ease, it generates powerful winds with every swings");
                     Console.WriteLine();                    
                     Console.WriteLine("While trying out the weapon a Water Dragon has come close to attack you\nThe battle begins with the dragon!");
@@ -372,6 +375,7 @@ namespace KonsooliMäng
                 }
                 else if (cmd == "2")
                 {
+                    Console.Clear();
                     Console.WriteLine("You choose to run off the path into the forest to avoid the sparkling object\n");
                     Console.WriteLine("After walking for a while in the forest you notice that you're lost and don't know the way back to the path\nYou've been lost for so long that you don't even know how long it's been since then\nYou start to feel weakened because of hunger and dehydration\nWhile taking a small break you are ambushed by a goblin\n");
                     Console.WriteLine("You are unable to run away and the only option is to fight\n");
@@ -379,6 +383,7 @@ namespace KonsooliMäng
                 }
                 else if (cmd == "3")
                 {
+                    Console.Clear();
                     Console.WriteLine("You choose to stay where you are for a while to see if something unusual happens to the object\nWhile you wait to see if something unusual happens to the sparkling object you are attacked by a Water Dragon");
                     Console.WriteLine("What do you wish to do?\n1. Fight the Water Dragon\n2. Run towards the sparkling object\n3. Run into the forest\n4. Run under the Water dragon and try to hide yourself");
                     string vastus = Console.ReadLine();
@@ -389,6 +394,7 @@ namespace KonsooliMäng
                     }
                     while (vastus == "2")
                     {
+                        Console.Clear();
                         Console.WriteLine("You choose to run towards the sparkling object to escape the dragon");
                         Console.WriteLine("You pick up the sparkling object and the fight begins!\n");
                         statid.ATK += 4000;
@@ -399,11 +405,13 @@ namespace KonsooliMäng
                     }
                     while (vastus == "3")
                     {
+                        Console.Clear();
                         Console.WriteLine("You decide to run into the forest to escape from the dragon\nYou run for a while and notice that you're being followed by 2 goblins\nYou continue running quivering in fear from the Water Dragon\nAs you look back you at the goblins and the Water Dragon in the distance you fall off the cliff which you didn't notice because you were looking back and die");
                         break;
                     }
                     while (vastus == "4")
                     {
+                        Console.Clear();
                         Console.WriteLine("You decide to try and hide yourself under the Water Dragon\nYou start running towards the Water Dragon to get under it\nYou manage to get under it, but the Water Dragon stands up on two feet and grabs you with one hand\nThe Water Dragon roars in your face, making you quiver in fear and faint\nThe Water Dragon throws you in its mouth and swallows you whole");
                         break;
                     }
@@ -413,7 +421,7 @@ namespace KonsooliMäng
             else if (path == "4") //SEE ON KERDI OMA
                 
             {
-                
+                Console.Clear();
                 Console.WriteLine("--------------------------------------------------------------------------------------------------");
                 Console.WriteLine("\nYou embark on your journey, you start walking towards your path. \nTime passes \n\nYour mind wanders if this was the right choice, your heart stays true \nbut your mind questions. \n“Thou ought thunk he chosen the rightest of paths, ought to be'ist thar complicatest“ \nYou begin to see green leaves and green trees, night starts to overwhelm the sky. \nYou feel tired. You are thinking of making a camp");
                 Console.WriteLine("\nAre You going to find a campsite or going to get firewood. \n1.Get wood, then find camp \n2.Find campsite, then firewood");
@@ -424,16 +432,19 @@ namespace KonsooliMäng
                         string valik = Console.ReadLine();
                         if (valik == "1")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest, to find some wood. \nYou found yourself some firewood. \nYou start to look for a campsite, you found it. It isn’t perfect, but it will do.");
                             break;
                         }
                         else if (valik == "2")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest for a campsite. \nYou found a nice place near a river. \nYou put your belongings on the ground and go to find firewood. \n\nYou found some firewood, but not much.");
                             break;
                         }
                         else
                         {
+                            Console.Clear();
                             Console.WriteLine("Choose the right number");
 
                         }
@@ -442,70 +453,84 @@ namespace KonsooliMäng
                     while (true)
 
                     {
+                        Console.Clear();
                         Console.WriteLine("\nYou're sitting by the fire, you hear cracking sounds in the bushes. what do you do? \n1. Investigate \n2. Ignore.");
                         string valik2 = Console.ReadLine();
                         if (valik2 == "1")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight and ready to fight. You walk to the bushes, open them and \nslash whatever is inside. \nThere was nothing there. \nYou think of yourself as such a fool, walk back and hear it again.. This time you ignore it. \nYou Hear a klonk, your head aches, \nyou fall down. \neverything fades..");
                             break;
                         }
 
                         else if (valik2 == "2")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou ignore it, \nUnexpectedly you Hear a klonk, your head aches. \nYou fall down. \neverything fades..");
                             break;
                         }
                         else
                         {
+                            Console.Clear();
                             Console.WriteLine("Choose the right number");
                         }
                     }
                     
                     while (true)
                     {
+                        Console.Clear();
                         Console.WriteLine("\n\nYou are unconcious.. \n1.Try to wake up.");
                         string valik3 = Console.ReadLine();
                         if (valik3 == "1")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou opened your eyes.");
                             break;
                         }
                         else
                         {
+                            Console.Clear();
                             Console.WriteLine("Choose the only option");
                         }
                                                
                     }
                     while (true)
                     {
+                        Console.Clear();
                         Console.WriteLine("You hear some keys rambling in the distance. \n1.Try to move. \n2.Try Not to move.");
                         string valik4 = Console.ReadLine();
                         if (valik4 == "2")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stayed still, you hear someone walking towards you.");
                             break;
                         }
                         else if (valik4 == "1")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou tried to move, but you are tired. You hear someone walking towards you.");
                             break;
                         }
                         else
                         {
+                            Console.Clear();
                             Console.WriteLine("Choose something");
                         }
                     }
+                    Console.Clear();
                     Console.WriteLine("He lits up a torch, looks for his keys and opens your cell. \nNext thing he does is he puts your food in the corner. You see an oppurtunity to grab his knife and kill him. \nWhat do you do? \n1. Try to grab his knife \n2. Try not to make a sound");
                     while (true)
                     {
                         string valik5 = Console.ReadLine();
                         if (valik5 == "1")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grabbed his knife, he noticed. What do you do? \n1. Stab him. \n2. Threaten him.");
                             break;
                         }
                         if (valik5 == "2")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stayed still");
                             Console.WriteLine("He walks up to you, he notices you have moved. \nHe grabs his knife, What do you do? \n1. Try to block him from trying to stab you");
                             string valik7 = Console.ReadLine();
@@ -513,16 +538,18 @@ namespace KonsooliMäng
                             {
                                 if (valik7 == "1")
                                 {
+                                    Console.Clear();
                                     Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou failed to block him.");
                                     Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine("YOU DIED");
+                                    Console.WriteLine("YOU HAVE DIED!");
                                     Console.ResetColor();
                                     break;
                                     
                                 }
                                 else
                                 {
-                                    Console.WriteLine("choose again");
+                                    Console.Clear();
+                                    Console.WriteLine("Choose again");
                                 }
                                 break;
                             }
@@ -530,7 +557,8 @@ namespace KonsooliMäng
                         }
                         else
                         {
-                            Console.WriteLine("choose something");
+                            Console.Clear();
+                            Console.WriteLine("Choose something");
                         }                        
                     }
                     string valik6 = Console.ReadLine();
@@ -538,15 +566,18 @@ namespace KonsooliMäng
                     {
                         if (valik6 == "1")
                         {
+                            Console.Clear();
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stabbed him");
                             break;
                         }
                         
                         else
                         {
-                            Console.WriteLine("choose again");
+                            Console.Clear();
+                            Console.WriteLine("Choose again");
                         }
                     }
+                    Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("The masters are pleased");
                     Console.ResetColor();
