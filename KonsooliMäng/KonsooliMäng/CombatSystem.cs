@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace KonsooliMäng
@@ -11,6 +12,7 @@ namespace KonsooliMäng
         public void Fight(int damage, int health, string monster, Statid statid, bool Dog, bool Gold)
         {
             Random random = new Random();
+            int ms = 1000;
             while (true)
             {
                 if (statid.Klass == "Mage")
@@ -219,7 +221,10 @@ namespace KonsooliMäng
                 {
                     Console.WriteLine("Please choose one of the options");
                 }
+                Thread.Sleep(ms);
+                Console.Clear();
             }
+            Console.Clear();
         }
     }
 }

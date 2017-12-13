@@ -63,7 +63,6 @@ namespace KonsooliMäng
             {
                 
                 Console.Clear();
-                Console.WriteLine();
                 Console.WriteLine("You wake up in a strange forest, everything around you is dark and creepy... you hear thunder in the distance. You clutch your weapon in fear. It's frightening, what do you do?\n1. Look around\n2. Take a rest");
                 string response = Console.ReadLine();
                 if (response == "1")
@@ -79,10 +78,10 @@ namespace KonsooliMäng
                     Console.WriteLine("Please choose one of the options");
                 }
             }
+            Console.Clear();
             string path;
             while (true)
             {
-                
                 Console.WriteLine("You notice 3 pathways in the distance, you go closer and notice an old ghost-man is in front of one of the paths, he proclaims: “One of these paths will bring you good fortune, the others only hardship CHOOSE WISELY FOR IT CANNOT BE CHANGED LATER!”\n1. Ask him for advice\n2. Choose the left path\n3. Choose the middle path\n4. Choose the right path\n");
                 path = Console.ReadLine();
                 if (path == "1")
@@ -118,10 +117,12 @@ namespace KonsooliMäng
                 string tegu = "1";
                 Console.WriteLine("As you walk the left path you feel a sense of dread, you wonder if you made the right choice, it probably doesn’t matter anyway, that old fart was just playing games with me, but that fog is really worrying.\nHours seem to pass by uneventful when you realize that you have already passed this grove.\n1. Start running\n2. Inspect the grove\n");
                 string vastus = Console.ReadLine();
+                Console.Clear();
                 if (vastus == "1")
                 {
                     Console.WriteLine("It’s already dark out when you pass the grove for the 3rd time, but this time is different, the stone in the middle of the grove has moved to the far left.\n1. Inspect the stone\n2. Stand still\n");
                     string response = Console.ReadLine();
+                    Console.Clear();
                     if (response == "1")
                     {
                         Console.WriteLine("While inspecting the stone it starts to crumble and shake, the stone turns to rubble revealing an unknown monster, that must be the reason for me running around like an idiot. It charges\n");
@@ -139,6 +140,7 @@ namespace KonsooliMäng
                 {
                     Console.WriteLine("When inspecting the grove you notice a large boulder move a little, you think it might be your mind tricking you\n1. Inspect the boulder\n2. Run away\n");
                     string sõna = Console.ReadLine();
+                    Console.Clear();
                     if (sõna == "1")
                     {
                         Console.WriteLine("While inspecting the stone it starts to crumble and shake, the stone turns to rubble revealing an unknown monster, that must be the reason for me running around like an idiot. It charges\n");
@@ -147,6 +149,7 @@ namespace KonsooliMäng
                     {
                         Console.WriteLine("It’s already dark out when you pass the grove for the 3rd time, but this time is different, the stone in the middle of the grove has moved to the far left.\n1. Inspect the stone\n2. Stand still\n");
                         string response = Console.ReadLine();
+                        Console.Clear();
                         if (response == "1")
                         {
                             Console.WriteLine("While inspecting the stone it starts to crumble and shake, the stone turns to rubble revealing an unknown monster, that must be the reason for me running around like an idiot. It charges\n");
@@ -161,12 +164,15 @@ namespace KonsooliMäng
                         }
                     }
                 }
+                Thread.Sleep(ms);
                 combat.Fight(5, 50, "Stone golem", statid, false, false);
                 Console.WriteLine("With the monster slain the fog dissipates and your mind feels clearer, you feel confident in your ability to leave the forest, but at the same time you feel tired enough to fall asleep right where you’re standing\n1. Continue on the trail\n2. Rest at the grove\n");
                 vastus = Console.ReadLine();
+                Console.Clear();
                 if (vastus == "1")
                 {
                     Console.WriteLine("You walk on the trail in the middle of the night and hear shuffling in a nearby bush, a puma plunges at you.");
+                    Thread.Sleep(ms);
                     combat.Fight(8, 70, "Puma", statid, false, false);
                     Console.WriteLine("After defeating the puma and walking for hours on end you finally reach the end of the forest, ahead of you is a large field. You feel so exhausted you collapse.");
                     Console.WriteLine("You wake up and it’s the middle of the day, the field hasn’t moved and neither have you, what do you want to do?\n");
@@ -178,9 +184,11 @@ namespace KonsooliMäng
                 }
                 Console.WriteLine("1. Cross the field\n2. Head back to the forest\n");
                 vastus = Console.ReadLine();
+                Console.Clear();
                 if (vastus != "1")
                 {
                     Console.WriteLine("You head back to the forest and see multiple monsters, one of them attacks you\n");
+                    Thread.Sleep(ms);
                     combat.Fight(5, 50, "Monster", statid, false, false);
                 }
                 string scenario = "";
@@ -189,11 +197,12 @@ namespace KonsooliMäng
                 {
                     Console.WriteLine("While walking through the field you come across a wild dog, limping.\n1. Kill the dog like a heartless person\n2. Feed the dog and patch him up\n3. Leave him there like the cold person you are\n");
                     vastus = Console.ReadLine();
-
+                    Console.Clear();
                     if (vastus == "1")
                     {
                         Console.WriteLine("The dog looks at you with sad eyes, are you sure you want to do this?\n1. YES\n2. No, i was kidding");
                         string tapmine = Console.ReadLine();
+                        Console.Clear();
                         if (tapmine == "1")
                         {
                             Console.WriteLine("You try to attack the dog, but you end up having a heart attack, the gods were not pleased with your actions");
@@ -222,12 +231,13 @@ namespace KonsooliMäng
                 {
                     Console.WriteLine("With your trusty companion {INSERT NAME HERE} by your side you reach the end of the field where you find a distressed woman.\n1. Go ask the woman what's wrong\n2. Continue on your path, you have more important things to do");
                     vastus = Console.ReadLine();
+                    Console.Clear();
 
                     if (vastus == "1")
                     {
                         Console.WriteLine("You approach the woman and ask her what’s wrong\n“Well you see kind sir, i lost my puppy and i can’t seem to find her”\n1. Is this your puppy?\n2. What puppy? i don't know what you're talking about\n");
                         tegu = Console.ReadLine();
-
+                        Console.Clear();
                         if (tegu == "1")
                         {
                             scenario = "A";
@@ -236,15 +246,17 @@ namespace KonsooliMäng
                         {
                             Console.WriteLine("She sees the dog behind you...\n1. Cover it up some more\n2. Admit that the dog might be her puppy\n");
                             string valik = Console.ReadLine();
+                            Console.Clear();
                             if (valik == "1")
                             {
                                 Console.WriteLine("“Isabella is that you?”\n1. No, that's my dog {INSERT NAME HERE}\n2. I think it might be your puppy");
                                 string action = Console.ReadLine();
+                                Console.Clear();
                                 if (action == "1")
                                 {
                                     Console.WriteLine("Oh, i’m sorry she reminds me so much of her and i was willing to give 10 000 gold to the person who found her\n1. Give her the puppy\n2. KILL HER AND TAKE THE MONEY\n3. Leave her there\n");
                                     string ok = Console.ReadLine();
-
+                                    Console.Clear();
                                     if (ok == "1")
                                     {
                                         scenario = "A";
@@ -278,19 +290,19 @@ namespace KonsooliMäng
                 {
                     Console.WriteLine("Feeling like a little bad after leaving the dog you reach the end of the field where you find a distressed woman.\n1. Go ask the woman what's wrong\n2. Continue on your path, you have more important things to do\n");
                     vastus = Console.ReadLine();
-
+                    Console.Clear();
                     if (vastus == "1")
                     {
                         while (true)
                         {
                             Console.WriteLine("You approach the woman and ask her what’s wrong\n“Well you see kind sir, i lost my puppy and i can’t seem to find her”\n1. Oh, i left her to die\n2. Never heard of no puppy\n");
                             tegu = Console.ReadLine();
-
+                            Console.Clear();
                             if (tegu == "1")
                             {
                                 Console.WriteLine("“You… you did what?”\n1. I left her to die in the forest i was in, she was badly hurt\n2. JK\n");
                                 string action = Console.ReadLine();
-
+                                Console.Clear();
                                 if (action == "1")
                                 {
                                     Console.WriteLine("“OH NO ISABELLA” she screams as she runs past you to the forest");
@@ -318,22 +330,26 @@ namespace KonsooliMäng
                 if (scenario == "A" && dog == true)
                 {
                     Console.WriteLine("“Oh Isabella how i have missed you. please take this for your trouble” You got 10 000 gold.\n“If you’re looking for the town of Cakinass it’s 5 km to the north of here” Cakinass, the name sounds so familiar on your tongue, you feel like it might be your home\nYou head to the town of Cakinass where a large water dragon is looming over the church tower.It flies at you.\n");
+                    Thread.Sleep(ms);
                     combat.Fight(100, 2000, "Dragon", statid, dog, true);
                     Console.WriteLine("HUZZAH VICTORY");
                 }
                 else if (scenario == "B" && dog == true)
                 {
                     Console.WriteLine("You head toward where you were going before all the trouble and find yourself in a town with a water dragon looming over the church watch tower. It flies at you.\n");
+                    Thread.Sleep(ms);
                     combat.Fight(100, 2000, "Dragon", statid, dog, false);
                 }
                 else if (scenario == "A" && dog == true)
                 {
                     Console.WriteLine("Feeling the gold in your satchel and the dog by your side makes you feel invincible as you make it to the town of Cakinass, apparently. There you notice a large water dragon atop a church tower. It flies at you.\n");
+                    Thread.Sleep(ms);
                     combat.Fight(100, 2000, "Dragon", statid, dog, true);
                 }
                 else if (scenario == "B" && dog == false)
                 {
                     Console.WriteLine("You head toward where you were going before all the trouble and find yourself in a town with a water dragon looming over the church watch tower. It flies at you.\n");
+                    Thread.Sleep(ms);
                     combat.Fight(100, 2000, "Dragon", statid, dog, false);
                 }
             }
