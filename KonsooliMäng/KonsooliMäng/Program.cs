@@ -50,7 +50,7 @@ namespace KonsooliMäng
                 }
                 else
                 {
-                    Console.WriteLine("Not an option (...the fuck?)\n");
+                    Console.WriteLine("Not an option (...the f***?)\n");
                 }
             }
 
@@ -65,7 +65,7 @@ namespace KonsooliMäng
                 }
                 else if (response == "2")
                 {
-                    Console.WriteLine("You have more important things to do than jack off to an extra curvy piece of driftwood that’s shaped like your old neighbours goat");
+                    Console.WriteLine("You have more important things to do than that.");
                 }
                 else
                 {
@@ -99,7 +99,7 @@ namespace KonsooliMäng
                 }
                 else
                 {
-                    Console.WriteLine("Please choose one of the options");
+                    Console.WriteLine("Please choose one of the options\n");
                 }
             }
             if (path == "2") //SEE ON GERDI OMA
@@ -254,7 +254,7 @@ namespace KonsooliMäng
                 bool dog = false;
                 while (true)
                 {
-                    Console.WriteLine("While walking through the field you come across a wild dog, limping.\n1. Kill the fucking dog like a heartless son of a bitch\n2. Feed the dog and patch him up\n3. Leave him there like the cold bitch (dog pun) you are\n");
+                    Console.WriteLine("While walking through the field you come across a wild dog, limping.\n1. Kill the dog like a heartless person\n2. Feed the dog and patch him up\n3. Leave him there like the cold person you are\n");
                     vastus = Console.ReadLine();
 
                     if (vastus == "1")
@@ -275,7 +275,7 @@ namespace KonsooliMäng
                     }
                     else if (vastus == "2")
                     {
-                        Console.WriteLine("You patch up the dog and it wags it’s tail in delight. You have earned a loyal companion (he won’t fight for you though, it’s a fucking dog don’t go throwing it at enemies, love it)");
+                        Console.WriteLine("You patch up the dog and it wags it’s tail in delight. You have earned a loyal companion (he won’t fight for you though, it’s a dog don’t go throwing it at enemies, love it)");
                         dog = true;
                         break;
                     }
@@ -343,7 +343,7 @@ namespace KonsooliMäng
                 }
                 else if (dog == false)
                 {
-                    Console.WriteLine("Feeling like a little shit after leaving the dog you reach the end of the field where you find a distressed woman.\n1. Go ask the woman what's wrong\n2. Continue on your path, you have more important things to do\n");
+                    Console.WriteLine("Feeling like a little bad after leaving the dog you reach the end of the field where you find a distressed woman.\n1. Go ask the woman what's wrong\n2. Continue on your path, you have more important things to do\n");
                     vastus = Console.ReadLine();
 
                     if (vastus == "1")
@@ -612,13 +612,13 @@ namespace KonsooliMäng
                     while (vastus == "1")
                     {
                         //EI TÖÖTA
-                        int ms = 2000;
-                        
+                        int ms = 2000;                        
                         Random random = new Random();
-                        var damage = random.Next(statid.ATK - 8, statid.ATK - 5);
-                        var MobDamage = random.Next(koletised.ATK - 2, koletised.ATK + 3);
-                        var elud = statid.HP - MobDamage;
-                        var MobElud = koletised.HP - damage;
+                        int damage = random.Next(statid.ATK - 6, statid.ATK - 4);
+                        int MobDamage = random.Next(koletised.ATK - 2, koletised.ATK + 3);
+                        int elud = statid.HP - MobDamage;
+                        int MobElud = koletised.HP - damage;
+                        
                         Console.WriteLine("The monster deals " + MobDamage + " damage!");
                         Console.WriteLine("You have " + elud + " health left!");
                         Thread.Sleep(ms);
@@ -627,14 +627,11 @@ namespace KonsooliMäng
                         Thread.Sleep(ms);
                         Console.WriteLine("The monster deals " + MobDamage + " damage!");
                         Console.WriteLine("You have " + elud + " health left!");
-                        if (elud == 0)
+                        if (elud <= 0)
                         {
                             Console.WriteLine("You have died!");
                             break;
-                        }
-
-                        break;
-                        
+                        }                                                                        
                     }
 
                 }
