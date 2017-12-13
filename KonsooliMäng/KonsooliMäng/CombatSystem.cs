@@ -12,7 +12,7 @@ namespace KonsooliMäng
         public void Fight(int damage, int health, string monster, Statid statid, bool Dog, bool Gold)
         {
             Random random = new Random();
-            int ms = 1000;
+            int ms = 1500;
             while (true)
             {
                 if (statid.Klass == "Mage")
@@ -24,7 +24,7 @@ namespace KonsooliMäng
                     Console.WriteLine("You have " + statid.HP + " HP and " + statid.MP + " stamina");
                 }
                 Console.WriteLine("The monster has " + health + " HP");
-                Console.WriteLine("What would you like to do?\n1. Fight\n2. Block\n3. Rest\n4. Run away");
+                Console.WriteLine("\nWhat would you like to do?\n1. Fight\n2. Block\n3. Rest\n4. Run away");
                 if (statid.Klass == "Mage")
                 {
                     Console.WriteLine("5. Heal");
@@ -56,10 +56,12 @@ namespace KonsooliMäng
                         Console.WriteLine("5. Throw gold at the dragon");
                     }
                 }
+                Console.WriteLine();
                 string vastus = Console.ReadLine();
-
+                Console.WriteLine();
                 if (vastus == "1")
                 {
+                    
                     if (statid.Klass == "Mage")
                     {
                         var DamageToMonster = random.Next(statid.ATK - 1, statid.ATK + 2);
