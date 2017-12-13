@@ -852,11 +852,7 @@ namespace KonsooliMäng
                             Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stabbed him");
                             break;
                         }
-                        if (valik6 == "2")
-                        {
-                            Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou threatened him.");
-                            break;
-                        }
+                        
                         else
                         {
                             Console.WriteLine("choose again");
@@ -864,8 +860,10 @@ namespace KonsooliMäng
                     }
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("The masters are pleased");
-                    
+                    Console.ResetColor();
+                    break;
                 }
+                
             }
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("                      `````         ````      `-::-.`            `````       ````                       ");
@@ -897,7 +895,6 @@ namespace KonsooliMäng
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("You win the game of life");
-            Console.WriteLine("Donate'ige Kert Moorbachile, kert.moor@gmail.com™");
             Console.ResetColor();
             Console.ReadLine();
         }
