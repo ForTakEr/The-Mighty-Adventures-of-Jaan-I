@@ -288,10 +288,10 @@ namespace KonsooliMäng
                 else if (vastus == "5" && statid.Klass == "Mage")
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("You regain 15 HP and lose 2 MP");
+                    Console.WriteLine("You regain 15 HP and lose 5 MP");
                     Console.ResetColor();
                     statid.HP += 15;
-                    statid.MP -= 2;
+                    statid.MP -= 5;
                     if (statid.HP > statid.MaxHP)
                     {
                         statid.HP = statid.MaxHP;
