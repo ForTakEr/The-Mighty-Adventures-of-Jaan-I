@@ -17,9 +17,50 @@ namespace KonsooliMäng
             {
                 if (statid.Klass == "Mage")
                 {
-                    if (statid.HP >= 5) //VÄRVI VÄRK SIIA PANNA
+                    if (statid.HP >= 10)
                     {
-                        Console.WriteLine("You have " + statid.HP + " HP and " + statid.MP + " MP");
+                        Console.Write("You have ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(statid.HP + " HP ");
+                        Console.ResetColor();
+                        Console.Write("and ");
+                        if (statid.MP > 4)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(statid.MP + " MP");
+                            Console.ResetColor();
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+                            Console.Write("and ");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(statid.MP + " MP");
+                            Console.ResetColor();
+                            Console.WriteLine();
+                        }
+                    }
+                    else
+                    {
+                        Console.Write("You have ");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(statid.HP + " HP ");
+                        Console.ResetColor();
+                        Console.Write("and ");
+                        if (statid.MP > 4)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(statid.MP + " stamina");
+                            Console.ResetColor();
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(statid.MP + " stamina");
+                            Console.ResetColor();
+                            Console.WriteLine();
+                        }
                     }
                 }
                 else
@@ -112,94 +153,76 @@ namespace KonsooliMäng
                 Console.WriteLine();
                 if (vastus == "1")
                 {
-                    
-                    if (statid.Klass == "Mage")
+                    var DamageToMonster = random.Next(statid.ATK - 1, statid.ATK + 2);
+                    var DamageFromMonster = random.Next(damage - 1, damage + 1);
+                    statid.MP--;
+                    if (DamageToMonster == statid.ATK + 2)
                     {
-                        var DamageToMonster = random.Next(statid.ATK - 1, statid.ATK + 2);
-                        var DamageFromMonster = random.Next(damage - 1, damage + 1);
-                        statid.MP--;
-                        if (DamageToMonster == statid.ATK + 2)
+                        Console.Write("You deal ");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.Write(DamageToMonster + " damage");
+                        Console.ResetColor();
+                        Console.Write(" against " + monster);
+                        Console.WriteLine();
+                        health -= DamageToMonster;
+                        if (statid.Klass != "Mage")
                         {
-                            Console.WriteLine("You deal " + DamageToMonster + " damage against " + monster);
-                            Console.WriteLine("CRITICAL HIT\nYou regain one MP");
-                            statid.MP++;
-                            health -= DamageToMonster;
-                            if (health <= 0)
-                            {
-                                Console.WriteLine("You have defeated " + monster);
-                                break;
-                            }
-                            Console.WriteLine("You get hit for " + DamageFromMonster);
-                            if (statid.HP <= 0)
-                            {
-                                Console.WriteLine("GAME OVER, YOU HAVE DIED");
-                                Console.WriteLine("Press enter to try again");
-                                Console.ReadLine();
-                                break;
-                            }
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("CRITICAL HIT\nYou regain stamina");
+                            Console.ResetColor();
                         }
                         else
                         {
-                            Console.WriteLine("You deal " + DamageToMonster + " damage against " + monster);
-                            health -= DamageToMonster;
-                            if (health <= 0)
-                            {
-                                Console.WriteLine("You have defeated " + monster);
-                                break;
-                            }
-                            Console.WriteLine("You get hit for " + DamageFromMonster);
-                            statid.HP -= DamageFromMonster;
-                            if (statid.HP <= 0)
-                            {
-                                Console.WriteLine("GAME OVER, YOU HAVE DIED");
-                                Console.WriteLine("Press enter to try again");
-                                Console.ReadLine();
-                                break;
-                            }
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("CRITICAL HIT\nYou regain one MP");
+                            Console.ResetColor();
                         }
+                        if (health <= 0)
+                        {
+                            Console.WriteLine("You have defeated " + monster);
+                            break;
+                        }
+                        Console.Write("You get hit for ");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(DamageFromMonster + " damage");
+                        Console.ResetColor();
+                        Console.WriteLine();
+                        statid.HP -= DamageFromMonster;
+                        if (statid.HP <= 0)
+                        {
+                            Console.WriteLine("GAME OVER, YOU HAVE DIED");
+                            Console.WriteLine("Press enter to try again");
+                            Console.ReadLine();
+                            break;
+                        }
+                        statid.MP++;
                     }
                     else
                     {
-                        var DamageToMonster = random.Next(statid.ATK - 1, statid.ATK + 2);
-                        var DamageFromMonster = random.Next(damage - 1, damage + 1);
-                        statid.MP--;
-                        if (DamageToMonster == statid.ATK + 2)
+                        Console.Write("You deal ");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.Write(DamageToMonster + " damage");
+                        Console.ResetColor();
+                        Console.Write(" against " + monster);
+                        Console.WriteLine();
+                        health -= DamageToMonster;
+                        if (health <= 0)
                         {
-                            Console.WriteLine("You deal " + DamageToMonster + " damage against " + monster);
-                            Console.WriteLine("CRITICAL HIT\nYou regain stamina");
-                            if (health <= 0)
-                            {
-                                Console.WriteLine("You have defeated " + monster);
-                                break;
-                            }
-                            Console.WriteLine("You get hit for " + DamageFromMonster);
-                            if (statid.HP <= 0)
-                            {
-                                Console.WriteLine("GAME OVER, YOU HAVE DIED");
-                                Console.WriteLine("Press enter to try again");
-                                Console.ReadLine();
-                                break;
-                            }
-                            statid.MP++;
+                            Console.WriteLine("You have defeated " + monster);
+                            break;
                         }
-                        else
+                        Console.Write("You get hit for ");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(DamageFromMonster + " damage");
+                        Console.ResetColor();
+                        Console.WriteLine();
+                        statid.HP -= DamageFromMonster;
+                        if (statid.HP <= 0)
                         {
-                            Console.WriteLine("You deal " + DamageToMonster + " damage against " + monster);
-                            health = health - DamageToMonster;
-                            if (health <= 0)
-                            {
-                                Console.WriteLine("You have defeated " + monster);
-                                break;
-                            }
-                            Console.WriteLine("You get hit for " + DamageFromMonster);
-                            statid.HP = statid.HP - DamageFromMonster;
-                            if (statid.HP <= 0)
-                            {
-                                Console.WriteLine("GAME OVER, YOU HAVE DIED");
-                                Console.WriteLine("Press enter to try again");
-                                Console.ReadLine();
-                                break;
-                            }
+                            Console.WriteLine("GAME OVER, YOU HAVE DIED");
+                            Console.WriteLine("Press enter to try again");
+                            Console.ReadLine();
+                            break;
                         }
                     }
                 }
