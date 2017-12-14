@@ -428,8 +428,7 @@ namespace KonsooliMäng
 
                 {
                     Console.Clear();
-                    Console.WriteLine("--------------------------------------------------------------------------------------------------");
-                    Console.WriteLine("\nYou embark on your journey, you start walking towards your path. \nTime passes \n\nYour mind wanders if this was the right choice, your heart stays true \nbut your mind questions. \n“Thou ought thunk he chosen the rightest of paths, ought to be'ist thar complicatest“ \nYou begin to see green leaves and green trees, night starts to overwhelm the sky. \nYou feel tired. You are thinking of making a camp");
+                    Console.WriteLine("You embark on your journey, you start walking towards your path. \nTime passes \n\nYour mind wanders if this was the right choice, your heart stays true \nbut your mind questions. \n“Thou ought thunk he chosen the rightest of paths, ought to be'ist thar complicatest“ \nYou begin to see green leaves and green trees, night starts to overwhelm the sky. \nYou feel tired. You are thinking of making a camp");
                     Console.WriteLine("\nAre You going to find a campsite or going to get firewood. \n1.Get wood, then find camp \n2.Find campsite, then firewood");
                     while (true)
                     {
@@ -439,13 +438,13 @@ namespace KonsooliMäng
                             if (valik == "1")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest, to find some wood. \nYou found yourself some firewood. \nYou start to look for a campsite, you found it. It isn’t perfect, but it will do.");
+                                Console.WriteLine("You search the forest, to find some wood. \nYou found yourself some firewood. \nYou start to look for a campsite, you found it. It isn’t perfect, but it will do.");
                                 break;
                             }
                             else if (valik == "2")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou search the forest for a campsite. \nYou found a nice place near a river. \nYou put your belongings on the ground and go to find firewood. \n\nYou found some firewood, but not much.");
+                                Console.WriteLine("You search the forest for a campsite. \nYou found a nice place near a river. \nYou put your belongings on the ground and go to find firewood. \n\nYou found some firewood, but not much.");
                                 break;
                             }
                             else
@@ -460,19 +459,19 @@ namespace KonsooliMäng
 
                         {
                             Console.Clear();
-                            Console.WriteLine("\nYou're sitting by the fire, you hear cracking sounds in the bushes. what do you do? \n1. Investigate \n2. Ignore.");
+                            Console.WriteLine("You're sitting by the fire, you hear cracking sounds in the bushes. what do you do? \n1. Investigate \n2. Ignore.");
                             string valik2 = Console.ReadLine();
                             if (valik2 == "1")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grab your weapon, hold it tight and ready to fight. You walk to the bushes, open them and \nslash whatever is inside. \nThere was nothing there. \nYou think of yourself as such a fool, walk back and hear it again.. This time you ignore it. \nYou Hear a klonk, your head aches, \nyou fall down. \neverything fades..");
+                                Console.WriteLine("You grab your weapon, hold it tight and ready to fight. You walk to the bushes, open them and \nslash whatever is inside. \nThere was nothing there. \nYou think of yourself as such a fool, walk back and hear it again.. This time you ignore it. \nYou Hear a klonk, your head aches, \nyou fall down. \neverything fades..");
                                 break;
                             }
 
                             else if (valik2 == "2")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou ignore it, \nUnexpectedly you Hear a klonk, your head aches. \nYou fall down. \neverything fades..");
+                                Console.WriteLine("You ignore it, \nUnexpectedly you Hear a klonk, your head aches. \nYou fall down. \neverything fades..");
                                 break;
                             }
                             else
@@ -486,10 +485,11 @@ namespace KonsooliMäng
                         {
                             Console.WriteLine("\n\nYou are unconcious.. \n1.Try to wake up.");
                             string valik3 = Console.ReadLine();
+                            Console.Clear();
                             if (valik3 == "1")
                             {
 
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou opened your eyes.");
+                                Console.WriteLine("You opened your eyes.");
                                 break;
                             }
                             else
@@ -507,13 +507,13 @@ namespace KonsooliMäng
                             if (valik4 == "2")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stayed still, you hear someone walking towards you.");
+                                Console.WriteLine("You stayed still, you hear someone walking towards you.");
                                 break;
                             }
                             else if (valik4 == "1")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou tried to move, but you are tired. You hear someone walking towards you.");
+                                Console.WriteLine("You tried to move, but you are tired. You hear someone walking towards you.");
                                 break;
                             }
                             else
@@ -530,13 +530,13 @@ namespace KonsooliMäng
                             if (valik5 == "1")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou grabbed his knife, he noticed. What do you do? \n1. Stab him. \n2. Threaten him.");
+                                Console.WriteLine("You grabbed his knife, he noticed. What do you do? \n1. Stab him. \n2. Threaten him.");
                                 break;
                             }
                             if (valik5 == "2")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stayed still");
+                                Console.WriteLine("You stayed still");
                                 Console.WriteLine("He walks up to you, he notices you have moved. \nHe grabs his knife, What do you do? \n1. Try to block him from trying to stab you");
                                 string valik7 = Console.ReadLine();
                                 while (true)
@@ -544,7 +544,7 @@ namespace KonsooliMäng
                                     if (valik7 == "1")
                                     {
                                         Console.Clear();
-                                        Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou failed to block him.");
+                                        Console.WriteLine("You failed to block him.");
                                         Console.ForegroundColor = ConsoleColor.Red;
                                         Console.WriteLine("YOU HAVE DIED!");
                                         Console.ResetColor();
@@ -573,7 +573,7 @@ namespace KonsooliMäng
                             if (valik6 == "1")
                             {
                                 Console.Clear();
-                                Console.WriteLine("\n--------------------------------------------------------------------------------------------------\nYou stabbed him");
+                                Console.WriteLine("You stabbed him");
                                 break;
                             }
 
@@ -584,6 +584,8 @@ namespace KonsooliMäng
                             }
                         }
                         Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("YOU HAVE DIED");
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("The masters are pleased");
                         Console.ResetColor();
