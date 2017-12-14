@@ -430,8 +430,7 @@ namespace KonsooliMäng
                     Console.Clear();
                     Console.WriteLine("You embark on your journey, you start walking towards your path. \nTime passes \n\nYour mind wanders if this was the right choice, your heart stays true \nbut your mind questions. \n“Thou ought thunk he chosen the rightest of paths, ought to be'ist thar complicatest“ \nYou begin to see green leaves and green trees, night starts to overwhelm the sky. \nYou feel tired. You are thinking of making a camp");
                     Console.WriteLine("\nAre You going to find a campsite or going to get firewood. \n1.Get wood, then find camp \n2.Find campsite, then firewood");
-                    while (true)
-                    {
+
                         while (true)
                         {
                             string valik = Console.ReadLine();
@@ -451,7 +450,7 @@ namespace KonsooliMäng
                             {
                                 Console.Clear();
                                 Console.WriteLine("Choose the right number");
-
+                                break;
                             }
                         }
 
@@ -548,16 +547,14 @@ namespace KonsooliMäng
                                         Console.ForegroundColor = ConsoleColor.Red;
                                         Console.WriteLine("YOU HAVE DIED!");
                                         Console.ResetColor();
-                                        Thread.Sleep(1500);
-                                        Environment.Exit(0);
-
+                                    Console.WriteLine("Press enter to try again");
+                                        break;
                                     }
                                     else
                                     {
                                         Console.Clear();
                                         Console.WriteLine("Choose again");
                                     }
-                                    break;
                                 }
 
                             }
@@ -566,6 +563,7 @@ namespace KonsooliMäng
                                 Console.Clear();
                                 Console.WriteLine("Choose something");
                             }
+                            break;
                         }
                         string valik6 = Console.ReadLine();
                         while (valik6 == "1")
@@ -583,15 +581,12 @@ namespace KonsooliMäng
                                 Console.WriteLine("Choose again");
                             }
                         }
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("YOU HAVE DIED");
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("The masters are pleased");
-                        Console.ResetColor();
-                        break;
-                    }
-
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("YOU HAVE DIED");
+                    Console.ResetColor();
+                    Thread.Sleep(ms);
+                    Console.Clear();
                 }
             }
         } 
