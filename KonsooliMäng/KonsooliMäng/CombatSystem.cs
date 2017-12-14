@@ -133,8 +133,9 @@ namespace KonsooliMäng
                             if (statid.HP <= 0)
                             {
                                 Console.WriteLine("GAME OVER, YOU HAVE DIED");
+                                Console.WriteLine("Press enter to try again");
                                 Console.ReadLine();
-                                Environment.Exit(0);
+                                break;
                             }
                         }
                         else
@@ -151,8 +152,9 @@ namespace KonsooliMäng
                             if (statid.HP <= 0)
                             {
                                 Console.WriteLine("GAME OVER, YOU HAVE DIED");
+                                Console.WriteLine("Press enter to try again");
                                 Console.ReadLine();
-                                Environment.Exit(0);
+                                break;
                             }
                         }
                     }
@@ -174,8 +176,9 @@ namespace KonsooliMäng
                             if (statid.HP <= 0)
                             {
                                 Console.WriteLine("GAME OVER, YOU HAVE DIED");
+                                Console.WriteLine("Press enter to try again");
                                 Console.ReadLine();
-                                Environment.Exit(0);
+                                break;
                             }
                             statid.MP++;
                         }
@@ -193,8 +196,9 @@ namespace KonsooliMäng
                             if (statid.HP <= 0)
                             {
                                 Console.WriteLine("GAME OVER, YOU HAVE DIED");
+                                Console.WriteLine("Press enter to try again");
                                 Console.ReadLine();
-                                Environment.Exit(0);
+                                break;
                             }
                         }
                     }
@@ -214,8 +218,9 @@ namespace KonsooliMäng
                     if (statid.HP <= 0)
                     {
                         Console.WriteLine("GAME OVER, YOU HAVE DIED");
+                        Console.WriteLine("Press enter to try again");
                         Console.ReadLine();
-                        Environment.Exit(0);
+                        break;
                     }
                 }
                 else if (vastus == "3")
@@ -236,8 +241,9 @@ namespace KonsooliMäng
                     if (statid.HP <= 0)
                     {
                         Console.WriteLine("GAME OVER, YOU HAVE DIED");
+                        Console.WriteLine("Press enter to try again");
                         Console.ReadLine();
-                        Environment.Exit(0);
+                        break;
                     }
                 }
                 else if (vastus == "4")
@@ -277,7 +283,7 @@ namespace KonsooliMäng
                 Thread.Sleep(ms);
                 Console.Clear();
             }
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             Console.Clear();
         }
     }
