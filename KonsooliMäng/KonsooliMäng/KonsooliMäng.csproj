@@ -57,7 +57,7 @@
     <Content Include="BattleMusic.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Legend-of-Zelda-NES-Intro.wav">
+    <Content Include="MainMusic.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TPT.ico" />

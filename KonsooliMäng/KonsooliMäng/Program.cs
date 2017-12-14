@@ -15,7 +15,7 @@ namespace KonsooliMäng
             while (true)
             {
                 SoundPlayer MainMenu = new SoundPlayer();
-                MainMenu.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Legend-of-Zelda-NES-Intro.wav";
+                MainMenu.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\MainMusic.wav";
                 MainMenu.PlayLooping();
 
                 int ms = 1000;
