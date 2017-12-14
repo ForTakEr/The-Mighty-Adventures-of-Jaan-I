@@ -17,13 +17,64 @@ namespace KonsooliMäng
             {
                 if (statid.Klass == "Mage")
                 {
-                    Console.WriteLine("You have " + statid.HP + " HP and " + statid.MP + " MP");
+                    if (statid.HP >= 5) //VÄRVI VÄRK SIIA PANNA
+                    {
+                        Console.WriteLine("You have " + statid.HP + " HP and " + statid.MP + " MP");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("You have " + statid.HP + " HP and " + statid.MP + " stamina");
+                    if (statid.HP >= 10)
+                    {
+                        Console.Write("You have ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(statid.HP + " HP ");
+                        Console.ResetColor();
+                        Console.Write("and ");
+                        if (statid.MP > 4)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(statid.MP + " stamina");
+                            Console.ResetColor();
+                            Console.WriteLine();  
+                        }
+                        else
+                        {
+                            Console.Write("and ");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(statid.MP + " stamina");
+                            Console.ResetColor();
+                            Console.WriteLine();
+                        }
+                    }
+                    else
+                    {
+                        Console.Write("You have ");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(statid.HP + " HP ");
+                        Console.ResetColor();
+                        Console.Write("and ");
+                        if (statid.MP > 4)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(statid.MP + " stamina");
+                            Console.ResetColor();
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(statid.MP + " stamina");
+                            Console.ResetColor();
+                            Console.WriteLine();
+                        }
+                    }
                 }
-                Console.WriteLine("The monster has " + health + " HP");
+                Console.Write("The monster has ");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.Write(health + " HP");
+                Console.ResetColor();
+                Console.WriteLine();
                 Console.WriteLine("\nWhat would you like to do?\n1. Fight\n2. Block\n3. Rest\n4. Run away");
                 if (statid.Klass == "Mage")
                 {
