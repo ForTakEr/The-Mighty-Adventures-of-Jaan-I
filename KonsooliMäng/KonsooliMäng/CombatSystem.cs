@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Media;
 
 namespace KonsooliMäng
 {
@@ -12,6 +13,9 @@ namespace KonsooliMäng
         public void Fight(int damage, int health, string monster, Statid statid, bool Dog, bool Gold)
         {
             Random random = new Random();
+            SoundPlayer BattleMusic = new SoundPlayer();
+            BattleMusic.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\BattleMusic.wav";
+            BattleMusic.PlayLooping();
             int ms = 1500;
             while (true)
             {
@@ -328,6 +332,7 @@ namespace KonsooliMäng
                 Thread.Sleep(ms);
                 Console.Clear();
             }
+            BattleMusic.Stop();
             Thread.Sleep(1000);
             Console.Clear();
         }

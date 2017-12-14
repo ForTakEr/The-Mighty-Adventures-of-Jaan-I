@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Media;
 
 namespace KonsooliMäng
 {
@@ -13,6 +14,10 @@ namespace KonsooliMäng
         {
             while (true)
             {
+                SoundPlayer MainMenu = new SoundPlayer();
+                MainMenu.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Legend-of-Zelda-NES-Intro.wav";
+                MainMenu.PlayLooping();
+
                 int ms = 1000;
                 Statid statid = new Statid();
                 Random randomNumber = new Random();
@@ -21,6 +26,8 @@ namespace KonsooliMäng
 
                 Console.WriteLine("The Mighty Adventures of Jaanus!");
                 Console.WriteLine("Made by Moka Studio™ 2017\n");
+                Console.WriteLine("Please press any key to start game\n");
+                Console.ReadKey();
                 Thread.Sleep(ms);
                 Console.Clear();
                 while (true)
@@ -170,6 +177,7 @@ namespace KonsooliMäng
                     }
                     Thread.Sleep(ms);
                     combat.Fight(5, 50, "Stone golem", statid, false, false);
+                    MainMenu.PlayLooping();
                     Console.WriteLine("With the monster slain the fog dissipates and your mind feels clearer, you feel confident in your ability to leave the forest, but at the same time you feel tired enough to fall asleep right where you’re standing\n1. Continue on the trail\n2. Rest at the grove\n");
                     vastus = Console.ReadLine();
                     Console.Clear();
@@ -178,6 +186,7 @@ namespace KonsooliMäng
                         Console.WriteLine("You walk on the trail in the middle of the night and hear shuffling in a nearby bush, a puma plunges at you.");
                         Thread.Sleep(ms);
                         combat.Fight(8, 70, "Puma", statid, false, false);
+                        MainMenu.PlayLooping();
                         Console.WriteLine("After defeating the puma and walking for hours on end you finally reach the end of the forest, ahead of you is a large field. You feel so exhausted you collapse.");
                         Console.WriteLine("You wake up and it’s the middle of the day, the field hasn’t moved and neither have you, what do you want to do?\n");
                     }
@@ -194,6 +203,7 @@ namespace KonsooliMäng
                         Console.WriteLine("You head back to the forest and see multiple monsters, one of them attacks you\n");
                         Thread.Sleep(ms);
                         combat.Fight(5, 50, "Monster", statid, false, false);
+                        MainMenu.PlayLooping();
                     }
                     string scenario = "";
                     bool dog = false;
@@ -336,6 +346,7 @@ namespace KonsooliMäng
                         Console.WriteLine("“Oh Isabella how i have missed you. please take this for your trouble” You got 10 000 gold.\n“If you’re looking for the town of Cakinass it’s 5 km to the north of here” Cakinass, the name sounds so familiar on your tongue, you feel like it might be your home\nYou head to the town of Cakinass where a large water dragon is looming over the church tower.It flies at you.\n");
                         Thread.Sleep(ms);
                         combat.Fight(100, 2000, "Dragon", statid, false, true);
+                        MainMenu.PlayLooping();
                         Console.WriteLine("HUZZAH VICTORY");
                     }
                     else if (scenario == "B" && dog == true)
@@ -343,18 +354,21 @@ namespace KonsooliMäng
                         Console.WriteLine("You head toward where you were going before all the trouble and find yourself in a town with a water dragon looming over the church watch tower. It flies at you.\n");
                         Thread.Sleep(ms);
                         combat.Fight(100, 2000, "Dragon", statid, dog, false);
+                        MainMenu.PlayLooping();
                     }
                     else if (scenario == "A" && dog == true)
                     {
                         Console.WriteLine("Feeling the gold in your satchel and the dog by your side makes you feel invincible as you make it to the town of Cakinass, apparently. There you notice a large water dragon atop a church tower. It flies at you.\n");
                         Thread.Sleep(ms);
                         combat.Fight(100, 2000, "Dragon", statid, dog, true);
+                        MainMenu.PlayLooping();
                     }
                     else if (scenario == "B" && dog == false)
                     {
                         Console.WriteLine("You head toward where you were going before all the trouble and find yourself in a town with a water dragon looming over the church watch tower. It flies at you.\n");
                         Thread.Sleep(ms);
                         combat.Fight(100, 2000, "Dragon", statid, dog, false);
+                        MainMenu.PlayLooping();
                     }
                 }
                 else if (path == "3") //SEE ON SIMO OMA
@@ -374,6 +388,7 @@ namespace KonsooliMäng
                         statid.ATK += 4000;
                         statid.HP += 10000;
                         combat.Fight(100, 2000, "Water Dragon", statid, false, false);
+                        MainMenu.PlayLooping();
                         Console.WriteLine("The monster starts turning to dust as you kill it");
                         Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
                         Thread.Sleep(3000);
@@ -386,6 +401,7 @@ namespace KonsooliMäng
                         Console.WriteLine("After walking for a while in the forest you notice that you're lost and don't know the way back to the path\nYou've been lost for so long that you don't even know how long it's been since then\nYou start to feel weakened because of hunger and dehydration\nWhile taking a small break you are ambushed by a goblin\n");
                         Console.WriteLine("You are unable to run away and the only option is to fight\n");
                         combat.Fight(100, 2000, "Water Dragon", statid, false, false);
+                        MainMenu.PlayLooping();
                     }
                     else if (cmd == "3")
                     {
@@ -397,6 +413,7 @@ namespace KonsooliMäng
                         while (vastus == "1")
                         {
                             combat.Fight(100, 2000, "Dragon", statid, false, false);
+                            MainMenu.PlayLooping();
                             break;
                         }
                         while (vastus == "2")
@@ -407,6 +424,7 @@ namespace KonsooliMäng
                             statid.ATK += 4000;
                             statid.HP += 10000;
                             combat.Fight(100, 2000, "Dragon", statid, false, false);
+                            MainMenu.PlayLooping();
                             Console.WriteLine("The monster starts turning into dust as you kill it");
                             Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
                             break;
@@ -589,6 +607,7 @@ namespace KonsooliMäng
                     Console.ResetColor();
                     Thread.Sleep(ms);
                     Console.Clear();
+                    MainMenu.Stop();
                 }
             }
         } 

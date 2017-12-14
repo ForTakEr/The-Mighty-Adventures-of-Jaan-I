@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KonsooliMäng", "KonsooliMäng\KonsooliMäng.csproj", "{7A3E5E6F-7EAD-4B3A-AC5F-D3EFCB58022A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BFB272B0-6098-4A57-A700-2E9350178F36}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\BattleMusic.wav = ..\..\..\..\Downloads\BattleMusic.wav
+		..\..\..\..\Downloads\Legend-of-Zelda-NES-Intro.wav = ..\..\..\..\Downloads\Legend-of-Zelda-NES-Intro.wav
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
