@@ -12,6 +12,8 @@ namespace KonsooliMäng
         public int MP;
         public int ATK;
         public string Klass;
+        public int MaxHP;
+        public int MaxMP;
 
         public void Knight()
         {
@@ -19,6 +21,8 @@ namespace KonsooliMäng
             MP = 20;
             ATK = 12;
             Klass = "Knight";
+            MaxHP = HP;
+            MaxMP = MP;
         }
 
         public void Mage()
@@ -27,6 +31,8 @@ namespace KonsooliMäng
             MP = 35;
             ATK = 7;
             Klass = "Mage";
+            MaxHP = HP;
+            MaxMP = MP;
         }
 
         public void Archer()
@@ -35,6 +41,8 @@ namespace KonsooliMäng
             MP = 20;
             ATK = 10;
             Klass = "Archer";
+            MaxHP = HP;
+            MaxMP = MP;
         }
 
         public void Rogue()
@@ -43,6 +51,8 @@ namespace KonsooliMäng
             MP = 30;
             ATK = 12;
             Klass = "Rogue";
+            MaxHP = HP;
+            MaxMP = MP;
         }
     }
 }

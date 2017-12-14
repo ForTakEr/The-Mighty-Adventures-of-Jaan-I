@@ -250,6 +250,15 @@ namespace KonsooliMäng
                 {
                     statid.HP += random.Next(2, 15);
                     statid.MP += random.Next(5, 10);
+                    if (statid.HP > statid.MaxHP)
+                    {
+                        statid.HP = statid.MaxHP;
+                    }
+                    if (statid.MP > statid.MaxMP)
+                    {
+                        statid.MP = statid.MaxMP;
+                    }
+                    Console.ForegroundColor = ConsoleColor.Green;
                     if (statid.Klass == "Mage")
                     {
                         Console.WriteLine("You now have " + statid.HP + " HP and " + statid.MP + " MP");
@@ -258,9 +267,12 @@ namespace KonsooliMäng
                     {
                         Console.WriteLine("You now have " + statid.HP + " HP and " + statid.MP + " stamina");
                     }
+                    Console.ResetColor();
                     var DamageFromMonster = random.Next(damage - 1, damage + 1);
                     statid.HP -= DamageFromMonster;
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("The monster hit you while you were resting, you lost " + DamageFromMonster + " HP");
+                    Console.ResetColor();
                     if (statid.HP <= 0)
                     {
                         Console.WriteLine("GAME OVER, YOU HAVE DIED");
@@ -275,9 +287,19 @@ namespace KonsooliMäng
                 }
                 else if (vastus == "5" && statid.Klass == "Mage")
                 {
-                    Console.WriteLine("You regain 3 HP and lose 5 MP");
-                    statid.HP += 3;
-                    statid.MP -= 5;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("You regain 15 HP and lose 2 MP");
+                    Console.ResetColor();
+                    statid.HP += 15;
+                    statid.MP -= 2;
+                    if (statid.HP > statid.MaxHP)
+                    {
+                        statid.HP = statid.MaxHP;
+                    }
+                    if (statid.MP > statid.MaxMP)
+                    {
+                        statid.MP = statid.MaxMP;
+                    }
                 }
                 else if (vastus == "6" && statid.Klass == "Mage" && Dog && Gold)
                 {
