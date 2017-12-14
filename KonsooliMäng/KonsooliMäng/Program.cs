@@ -389,8 +389,9 @@ namespace KonsooliMäng
                         statid.HP += 10000;
                         combat.Fight(100, 2000, "Water Dragon", statid, false, false);
                         MainMenu.PlayLooping();
-                        Console.WriteLine("The monster starts turning to dust as you kill it");
+                        Console.WriteLine("The monster starts turning to dust as you kill it\n");
                         Console.WriteLine("Right after you killed the Water Dragon the old ghost-man reappears and starts talking to you\n'Thank you adventurer as you have saved this forest from the Water Dragons torment'\nThe old ghost-man calls for a talking griffin who is waiting for you to get on its back to get you back home");
+                        Console.WriteLine("\nTHE END!");
                         Thread.Sleep(3000);
                         Console.Clear();
                     }
