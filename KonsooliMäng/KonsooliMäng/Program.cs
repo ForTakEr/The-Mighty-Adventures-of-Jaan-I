@@ -27,7 +27,7 @@ namespace KonsooliMäng
                 Console.WriteLine("The Mighty Adventures of Jaanus!");
                 Console.WriteLine("Made by Moka Studio™ 2017\n");
                 Console.WriteLine("Please press any key to start game\n");
-                Console.ReadKey();
+                Console.ReadKey(true);
                 Thread.Sleep(ms);
                 Console.Clear();
                 while (true)
