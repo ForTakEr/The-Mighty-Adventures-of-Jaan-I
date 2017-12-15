@@ -221,7 +221,8 @@ namespace KonsooliMäng
                             {
                                 Console.WriteLine("You try to attack the dog, but you end up having a heart attack, the gods were not pleased with your actions");
                                 Console.WriteLine("-10 000 HP");
-                                Console.ReadLine();
+                                Console.WriteLine("You lose");
+                                Console.ReadKey(true);
                                 Environment.Exit(0);
                             }
                             else
