@@ -355,13 +355,15 @@ namespace KonsooliMäng
                         Thread.Sleep(ms);
                         combat.Fight(100, 2000, "Dragon", statid, dog, false);
                         MainMenu.PlayLooping();
+                        Console.WriteLine("HUZZAH VICTORY");
                     }
-                    else if (scenario == "A" && dog == true)
+                    else if (scenario == "C" && dog == true)
                     {
                         Console.WriteLine("Feeling the gold in your satchel and the dog by your side makes you feel invincible as you make it to the town of Cakinass, apparently. There you notice a large water dragon atop a church tower. It flies at you.\n");
                         Thread.Sleep(ms);
                         combat.Fight(100, 2000, "Dragon", statid, dog, true);
                         MainMenu.PlayLooping();
+                        Console.WriteLine("HUZZAH VICTORY");
                     }
                     else if (scenario == "B" && dog == false)
                     {
@@ -369,6 +371,7 @@ namespace KonsooliMäng
                         Thread.Sleep(ms);
                         combat.Fight(100, 2000, "Dragon", statid, dog, false);
                         MainMenu.PlayLooping();
+                        Console.WriteLine("HUZZAH VICTORY");
                     }
                 }
                 else if (path == "3") //SEE ON SIMO OMA

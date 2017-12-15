@@ -83,7 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="KonsooliMäng_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="BattleMusic.wav">

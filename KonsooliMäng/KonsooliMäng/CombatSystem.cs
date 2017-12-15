@@ -315,12 +315,22 @@ namespace KonsooliMäng
                     Console.WriteLine("Your dog barks at the dragon with great fierceness, the dragon flies away");
                     break;
                 }
-                else if (vastus == "6" && Dog || vastus == "5" && Dog)
+                else if (vastus == "5" && Dog && Gold)
+                {
+                    Console.WriteLine("Overcome by greed the dragon picks up the gold and flies away");
+                    break;
+                }
+                else if (vastus == "6" && Dog && Gold)
                 {
                     Console.WriteLine("Your dog barks at the dragon with great fierceness, the dragon flies away");
                     break;
                 }
-                else if (vastus == "6" && Gold || vastus == "5" && Gold)
+                else if (vastus == "5" && Dog)
+                {
+                    Console.WriteLine("Your dog barks at the dragon with great fierceness, the dragon flies away");
+                    break;
+                }
+                else if (vastus == "5" && Gold)
                 {
                     Console.WriteLine("Overcome by greed the dragon picks up the gold and flies away");
                     break;
