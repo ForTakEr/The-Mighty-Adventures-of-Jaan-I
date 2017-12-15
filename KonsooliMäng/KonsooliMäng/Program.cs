@@ -37,25 +37,25 @@ namespace KonsooliMäng
                     Console.WriteLine("*Knight\n*Mage\n*Archer\n*Rogue");
                     string klass = Console.ReadLine();
 
-                    if (klass == "Knight" || klass == "knight")
+                    if (klass.ToLower() == "knight")
                     {
                         statid.Knight();
                         Console.WriteLine("You are Jaanus the Knight");
                         break;
                     }
-                    else if (klass == "Mage" || klass == "mage")
+                    else if (klass.ToLower() == "mage")
                     {
                         statid.Mage();
                         Console.WriteLine("You are Jaanus the Mage");
                         break;
                     }
-                    else if (klass == "Archer" || klass == "archer")
+                    else if (klass.ToLower() == "archer")
                     {
                         statid.Archer();
                         Console.WriteLine("You are Jaanus the Archer");
                         break;
                     }
-                    else if (klass == "Rogue" || klass == "rogue")
+                    else if (klass.ToLower() == "rogue")
                     {
                         statid.Rogue();
                         Console.WriteLine("You are Jaanus the Rogue");
@@ -119,7 +119,7 @@ namespace KonsooliMäng
                     {
                         Console.WriteLine("Please choose one of the options\n");
                     }
-                    Thread.Sleep(ms);
+                    Thread.Sleep(2000);
                     Console.Clear();
                 }
                 if (path == "2") //SEE ON GERDI OMA
